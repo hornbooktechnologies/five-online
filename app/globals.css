@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   LOCAL FONTS — exact fonts used in Figma
+   ───────────────────────────────────────────── */
+
+/* Reckless Neue — Display / H1 / H2 (Figma: "Reckless Neue" weight 400)
+   Using variable font so all weights are covered in one file */
+@font-face {
+  font-family: "Reckless Neue";
+  src: url("/fonts/reckless-font-family/RecklessCollectionVF-TRIAL.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Season Sans — Subtext / editorial paragraphs (Figma: "Season Sans-TRIAL")
+   Declaring individual weights to match API values: 400, 500, 550→600, 650→700 */
+@font-face {
+  font-family: "Season Sans";
+  src: url("/fonts/season-font-family/SeasonSans-TRIAL-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Season Sans";
+  src: url("/fonts/season-font-family/SeasonSans-TRIAL-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Season Sans";
+  src: url("/fonts/season-font-family/SeasonSans-TRIAL-SemiBold.ttf") format("truetype");
+  font-weight: 550 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Season Sans";
+  src: url("/fonts/season-font-family/SeasonSans-TRIAL-Bold.ttf") format("truetype");
+  font-weight: 650 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  /* ── Palette — exact Figma values ── */
+  --color-black:         #000000;
+  --color-white:         #ffffff;
+  --color-surface:       #f8f8f8;   /* section bg (Figma Rectangle 3 fill) */
+  --color-green:         #6abd45;   /* dot separators, borders */
+  --color-green-light:   #eaffdf;   /* quote/highlight box bg */
+  --color-border:        #d7d7d7;   /* footer divider line */
+  --color-border-dark:   #ebebeb;   /* card borders */
+  --color-theme-blue:    #24C4E6;
+  --color-theme-red:     #F48274;
+
+  /* ── Typography ── */
+  --font-display:  "Reckless Neue", serif;   /* exact Figma display font */
+  --font-sans:     "Season Sans", sans-serif; /* exact Figma subtext font */
+  --font-body:     var(--font-body);          /* Poppins — from Google Fonts */
+
+  /* legacy alias */
+  --font-playfair: "Reckless Neue", serif;
+
+  /* ── Animations ── */
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--font-body), "Poppins", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  padding-top: 90px;
+}
+
+/* Marquee animation for trusted brands */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Portfolio slider: no gaps between slides */
+.portfolio-slider .slick-slide > div {
+  margin: 0;
+  padding: 0;
+}
+.portfolio-slider .slick-list {
+  margin: 0;
+}
