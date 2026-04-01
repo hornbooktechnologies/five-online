@@ -30,7 +30,6 @@ export default function PortfolioPage() {
         },
       ]}
       bottomHeadingWidth={854}
-      bottomButtonVariant="outline"
     />
   );
 }

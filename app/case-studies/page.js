@@ -37,7 +37,6 @@ export default function CaseStudiesPage() {
         },
       ]}
       bottomHeadingWidth={940}
-      // bottomButtonVariant="filled"
       stickyLabel="Want results like these?"
       cardLinks={[
         "/case-studies/garware-hi-tech",

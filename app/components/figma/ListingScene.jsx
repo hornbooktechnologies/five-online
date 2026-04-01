@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Button from '@/app/components/common/Button';
+import { ArrowRightIcon } from "../icons";
 
 const CARD_BODY =
   "A selection of brands we've helped launch, scale, and transform online.";
@@ -116,9 +118,8 @@ function FilterColumn({ title, items }) {
 function Tag({ label, accent = false }) {
   return (
     <span
-      className={`inline-flex items-center justify-center px-3 py-1 font-sans text-[14px] leading-none text-black ${
-        accent ? "bg-[#c1ffa6]" : "bg-[#98eb72]"
-      }`}
+      className={`inline-flex items-center justify-center px-3 py-1 font-sans text-[14px] leading-none text-black ${accent ? "bg-[#c1ffa6]" : "bg-[#98eb72]"
+        }`}
     >
       {label}
     </span>
@@ -135,32 +136,6 @@ function CardArrow() {
         height={18}
       />
     </span>
-  );
-}
-
-function LaunchButton({ href, variant, label }) {
-  const filled = variant === "filled";
-
-  return (
-    <Link
-      href={href}
-      className={`inline-flex min-h-[54px] items-center justify-center rounded-full border px-7 text-center font-sans text-[17px] transition-colors ${
-        filled
-          ? "border-white bg-white text-black"
-          : "border-white bg-transparent text-white"
-      }`}
-    >
-      <span>{label}</span>
-      {!filled ? (
-        <Image
-          src='/figma/about/icon-arrow-light.svg'
-          alt=''
-          width={16}
-          height={16}
-          className='ml-3'
-        />
-      ) : null}
-    </Link>
   );
 }
 
@@ -211,17 +186,16 @@ function MobileCard({ card }) {
   const Wrapper = card.href ? Link : "article";
   const wrapperProps = card.href
     ? {
-        href: card.href,
-        "aria-label": `Open ${card.title}`,
-      }
+      href: card.href,
+      "aria-label": `Open ${card.title}`,
+    }
     : {};
 
   return (
     <Wrapper
       {...wrapperProps}
-      className={`mx-auto block max-w-[368px] ${
-        card.href ? "cursor-pointer" : ""
-      }`}
+      className={`mx-auto block max-w-[368px] ${card.href ? "cursor-pointer" : ""
+        }`}
     >
       <div className='relative aspect-[368/553] overflow-hidden bg-[#edf6e8]'>
         <Image
@@ -294,11 +268,10 @@ function MobileFilterSheet({
                         key={item}
                         type='button'
                         onClick={() => onSelect(group.title, item)}
-                        className={`rounded-full border px-4 py-2 font-sans text-[14px] leading-none transition-colors ${
-                          active
-                            ? "border-black bg-black text-white"
-                            : "border-[#dcdcdc] bg-white text-black"
-                        }`}
+                        className={`rounded-full border px-4 py-2 font-sans text-[14px] leading-none transition-colors ${active
+                          ? "border-black bg-black text-white"
+                          : "border-[#dcdcdc] bg-white text-black"
+                          }`}
                       >
                         {item}
                       </button>
@@ -319,7 +292,6 @@ export default function ListingScene({
   title,
   subtitle,
   filterGroups,
-  bottomButtonVariant,
   stickyLabel,
   cardLinks = [],
 }) {
@@ -403,18 +375,17 @@ export default function ListingScene({
                 const Wrapper = card.href ? Link : "article";
                 const wrapperProps = card.href
                   ? {
-                      href: card.href,
-                      "aria-label": `Open ${card.title}`,
-                    }
+                    href: card.href,
+                    "aria-label": `Open ${card.title}`,
+                  }
                   : {};
 
                 return (
                   <Wrapper
                     key={card.key}
                     {...wrapperProps}
-                    className={`group flex h-full flex-col overflow-hidden border border-[#ececec] bg-white transition-transform duration-200 ${
-                      card.href ? "hover:-translate-y-1" : ""
-                    }`}
+                    className={`group flex h-full flex-col overflow-hidden border border-[#ececec] bg-white transition-transform duration-200 ${card.href ? "hover:-translate-y-1" : ""
+                      }`}
                   >
                     <div className='relative aspect-[368/553] overflow-hidden bg-[#edf6e8]'>
                       <Image
@@ -477,11 +448,10 @@ export default function ListingScene({
               start with structure.
             </p>
             <div>
-              <LaunchButton
-                href='/contact'
-                variant={bottomButtonVariant}
-                label='Book Your D2C Launch Strategy Call'
-              />
+              <Button href="/contact" variant="outline" size="md">
+                Book Your D2C Launch Strategy Call
+                <ArrowRightIcon />
+              </Button>
             </div>
           </div>
         </div>

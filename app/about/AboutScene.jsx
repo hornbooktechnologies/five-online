@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
 import { faqsByPage } from "@/lib/data/faqs";
+import Button from '@/app/components/common/Button';
+import { ArrowRightIcon } from "../components/icons";
 
 const philosophyCards = [
   {
@@ -74,35 +76,6 @@ const socialLinks = [
   },
 ];
 
-function CtaLink({ href, label, variant = "dark" }) {
-  const dark = variant === "dark";
-  const outlined = variant === "outlined";
-
-  return (
-    <Link
-      href={href}
-      className={`inline-flex min-h-[52px] items-center rounded-full border px-6 py-3 font-sans text-[16px] sm:text-[18px] ${dark
-        ? "border-black bg-black text-white"
-        : outlined
-          ? "border-white bg-transparent text-white"
-          : "border-black bg-white text-black"
-        }`}
-    >
-      <span>{label}</span>
-      <Image
-        src={
-          dark || outlined
-            ? "/figma/about/icon-arrow-light.svg"
-            : "/figma/about/icon-arrow-dark.svg"
-        }
-        alt=''
-        width={16}
-        height={16}
-        className='ml-3'
-      />
-    </Link>
-  );
-}
 
 function HighlightChip({ children }) {
   return (
@@ -162,12 +135,14 @@ export default function AboutScene() {
           </div>
 
           <div className='mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row'>
-            <CtaLink href='/case-studies' label='Explore Case Studies' />
-            <CtaLink
-              href='/contact'
-              label='Book a Strategy Call'
-              variant='light'
-            />
+            <Button href="/case-studies" variant="primary" size="md">
+              Explore Case Studies
+              <ArrowRightIcon />
+            </Button>
+            <Button href="/contact" variant="secondary" size="md">
+              Book a Strategy Call
+              <ArrowRightIcon color="black" />
+            </Button>
           </div>
         </div>
       </section>
@@ -441,7 +416,10 @@ export default function AboutScene() {
           </p>
 
           <div className='mt-10'>
-            <CtaLink href='/contact' label='Book A Call' />
+            <Button href="/contact" variant="primary" size="md">
+              Book A Call
+              <ArrowRightIcon />
+            </Button>
           </div>
         </div>
       </section>
@@ -489,11 +467,10 @@ export default function AboutScene() {
             Schedule a 30-minute call with CEO to see if we are a good match.
           </h2>
 
-          <CtaLink
-            href='/contact'
-            label='Book a Strategy Call'
-            variant='outlined'
-          />
+          <Button href="/contact" variant="outline" size="md">
+            Book a Strategy Call
+            <ArrowRightIcon />
+          </Button>
         </div>
       </section>
     </main>

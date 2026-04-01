@@ -28,7 +28,7 @@ export default function FAQSection() {
               {faqs.map((faq, i) => (
                 <div key={i} className="border-b border-gray-200">
                   <button
-                    className="w-full text-left px-0 py-5 font-sans text-base flex justify-between items-center text-black"
+                    className="w-full text-left px-0 py-5 font-sans text-base flex justify-between items-center text-black cursor-pointer"
                     onClick={() => toggleFaq(i + 1)}
                   >
                     <span className="flex-1 pr-4 font-bold">{faq.q}</span>

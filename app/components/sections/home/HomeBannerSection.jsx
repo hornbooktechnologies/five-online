@@ -5,6 +5,7 @@ export default function HomeBannerSection() {
   return (
     <section
       className="h-auto md:h-screen bg-cover bg-center flex items-center mb-5 md:mb-20 pb-5 md:pb-20 px-[24px] md:px-[50px]"
+      style={{ backgroundImage: "url('/images/bg-banner.png')" }}
     >
       <div className="w-full">
         <div className="flex flex-wrap">

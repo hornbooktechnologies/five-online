@@ -11,10 +11,10 @@ import { cn } from "@/lib/utils/cn";
 const variants = {
   solid: "bg-black text-white hover:bg-zinc-800 transition-colors",
   dark: "bg-black text-white hover:bg-zinc-800 transition-colors",
-  outline: "bg-white border border-black text-black hover:bg-zinc-50 transition-colors",
+  outline: "border border-white bg-transparent text-white hover:bg-zinc-800 transition-colors",
   ghost: "bg-transparent text-black hover:bg-zinc-100 transition-colors",
   primary: "bg-black text-white hover:bg-zinc-800 transition-colors",
-  secondary: "bg-white border border-black text-black hover:bg-zinc-50 transition-colors",
+  secondary: "bg-white border border-black text-black hover:bg-zinc-200 transition-colors",
 };
 
 const sizes = {

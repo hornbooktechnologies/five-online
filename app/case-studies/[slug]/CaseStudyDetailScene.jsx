@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from '@/app/components/common/Button';
 
 const toolIcons = [
   "/figma/case-study-detail/figma-tool.png",
@@ -118,11 +119,11 @@ function buildFallbackContent(cs) {
       "The existing experience was limiting discovery, trust, and conversion momentum.",
     problemPoints: [
       challengeParts[0] ||
-        "The experience did not reflect the brand's current ambition.",
+      "The experience did not reflect the brand's current ambition.",
       challengeParts[1] ||
-        "Critical product information was harder to discover than it should have been.",
+      "Critical product information was harder to discover than it should have been.",
       challengeParts[2] ||
-        "The website was not giving the commercial team a strong growth platform.",
+      "The website was not giving the commercial team a strong growth platform.",
       "Mobile browsing introduced friction in key decision-making journeys.",
       "Enquiry actions needed more clarity and stronger intent capture.",
     ],
@@ -516,11 +517,11 @@ export default function CaseStudyDetailScene({ cs }) {
                 </p>
               </div>
               <Image
-                src='/figma/case-study-detail/iphone-13.png'
+                src='/figma/case-study-detail/iPhone13.png'
                 alt=''
-                width={600}
-                height={400}
-                className='w-full h-auto position-[unset] md:absolute bottom-[-70px] right-[-140px]'
+                width={300}
+                height={250}
+                className='w-[420px] h-auto position-[unset] md:absolute bottom-0 right-[40px]'
               />
               <Image
                 src='/figma/case-study-detail/doodle-3.svg'
@@ -603,12 +604,9 @@ export default function CaseStudyDetailScene({ cs }) {
           {content.closingSubcopy}
         </p>
         <div className='mt-[42px]'>
-          <Link
-            href='/contact'
-            className='inline-flex h-[54px] items-center justify-center rounded-[50px] bg-black px-10 font-sans text-[18px] text-white'
-          >
+          <Button href="/contact" variant="primary" size="md">
             Schedule Strategic Discussion
-          </Link>
+          </Button>
         </div>
       </section>
     </main>

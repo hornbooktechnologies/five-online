@@ -21,7 +21,7 @@ export default function CoreCapabilitiesSection() {
 
           {capabilities.map((cap, i) => (
             <div key={i} className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 text-center shrink">
-              <div className="relative rounded-[1.5rem] overflow-hidden group cursor-pointer inline-block w-full">
+              <div className="relative rounded-[1.5rem] overflow-hidden group inline-block w-full">
                 <div className="relative w-full overflow-hidden rounded-[1.5rem]">
                   <img src={`/images/core-capabilities/${cap.img}`} className="w-full aspect-[4/5] object-cover rounded-[1.5rem]" alt={cap.title} />
                   <div className="absolute inset-0 rounded-[1.5rem]" style={{ background: 'linear-gradient(to bottom, #00000000 20.77%, #000000)' }}></div>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import Button from "@/app/components/common/Button";
 import {
   ChevronDownIcon,
@@ -82,6 +83,7 @@ const findMenuById = (items, id) => {
 };
 
 export default function Header() {
+  const pathname = usePathname() || '';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeStacks, setActiveStacks] = useState(['main']);
 
@@ -133,13 +135,13 @@ export default function Header() {
             <li key={idx} className="border-b border-[#eee]">
               {item.items ? (
                 <button
-                  className="w-full flex justify-between items-center px-[15px] py-[20px] text-left font-body text-base text-[16px]"
+                  className="w-full flex justify-between items-center px-[15px] py-[20px] text-left font-body text-base text-[16px] hover:text-[#6ABD45] transition-colors"
                   onClick={() => pushStack(item.id)}
                 >
                   {item.label} <i className="fas fa-chevron-right text-xs text-black !font-black w-5 h-5 flex items-center justify-center"></i>
                 </button>
               ) : (
-                <Link href={item.href || '#'} className="block px-[15px] py-[20px] font-body text-base text-[16px]" onClick={closeMobileMenu}>
+                <Link href={item.href || '#'} className="block px-[15px] py-[20px] font-body text-base text-[16px] hover:text-[#6ABD45] transition-colors" onClick={closeMobileMenu}>
                   {item.label}
                 </Link>
               )}
@@ -147,8 +149,8 @@ export default function Header() {
           ))}
           {menuId === 'main' && (
             <>
-              <li className="border-b border-black/10"><Link href="#" className="block p-4 font-body text-base" onClick={closeMobileMenu}>Contact Us</Link></li>
-              <li className="border-b border-black/10"><Link href="#" className="block p-4 font-body text-base" onClick={closeMobileMenu}>Terms & Conditions</Link></li>
+              <li className="border-b border-black/10"><Link href="#" className="block p-4 font-body text-base hover:text-[#6ABD45] transition-colors" onClick={closeMobileMenu}>Contact Us</Link></li>
+              <li className="border-b border-black/10"><Link href="#" className="block p-4 font-body text-base hover:text-[#6ABD45] transition-colors" onClick={closeMobileMenu}>Terms & Conditions</Link></li>
             </>
           )}
         </ul>
@@ -172,22 +174,22 @@ export default function Header() {
                   <ul className="flex flex-row items-center ms-auto my-0 space-x-1 lg:space-x-2 xl:space-x-4 px-2 py-0.5">
                     {/* Capabilities */}
                     <li className="relative py-3 lg:py-[30px] px-2 group cursor-pointer">
-                      <a className="flex items-center gap-2 font-body text-black text-[17px] capitalize transition-colors whitespace-nowrap" role="button">
+                      <a className={`flex items-center gap-2 font-body text-[17px] capitalize transition-colors whitespace-nowrap group-hover:text-[#6ABD45] ${pathname.startsWith('/capabilities') ? 'text-[#6ABD45]' : 'text-black'}`} role="button">
                         Capabilities <ChevronDownIcon />
                       </a>
                       <ul className="absolute hidden group-hover:block bg-white top-[95%] -left-4 min-w-[280px] rounded-lg py-2 shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-[#0000002d] z-50">
-                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">New Business Website Launch</Link></li>
-                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">Corporate Website Revamp</Link></li>
-                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">D2C Ecommerce Launch</Link></li>
-                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">Conversion & CRO Audit</Link></li>
-                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">Website Maintenance & Performance</Link></li>
-                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">Get Found in AI Search</Link></li>
+                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">New Business Website Launch</Link></li>
+                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Corporate Website Revamp</Link></li>
+                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">D2C Ecommerce Launch</Link></li>
+                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Conversion & CRO Audit</Link></li>
+                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Website Maintenance & Performance</Link></li>
+                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Get Found in AI Search</Link></li>
                       </ul>
                     </li>
 
                     {/* Industries (Mega Menu) */}
                     <li className="relative py-3 lg:py-[30px] px-2 group cursor-pointer static">
-                      <a className="flex items-center gap-2 font-body text-black text-[17px] capitalize transition-colors whitespace-nowrap" role="button">
+                      <a className={`flex items-center gap-2 font-body text-[17px] capitalize transition-colors whitespace-nowrap group-hover:text-[#6ABD45] ${pathname.startsWith('/industrie') ? 'text-[#6ABD45]' : 'text-black'}`} role="button">
                         Industries <ChevronDownIcon />
                       </a>
                       <div className="absolute hidden group-hover:block left-0 w-full top-full bg-white border-t-[3px] border-t-black border border-[#0000002d] pt-10 pb-10 px-0 z-[999] shadow-[0_15px_30px_rgba(0,0,0,0.06)]">
@@ -195,12 +197,12 @@ export default function Header() {
                           <div className="flex flex-wrap -mx-3">
                             <div className="w-1/4 px-4 border-r border-gray-100">
                               <h6 className="font-body text-xl font-bold mb-4 text-black">B2B</h6>
-                              <Link href="#" className="block py-2 text-black font-body text-base hover:text-theme-red transition-colors">Corporate</Link>
-                              <Link href="#" className="block py-2 text-black font-body text-base hover:text-theme-red transition-colors">Real Estate</Link>
+                              <Link href="#" className="block py-2 text-black font-body text-base hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Corporate</Link>
+                              <Link href="#" className="block py-2 text-black font-body text-base hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Real Estate</Link>
                             </div>
                             <div className="w-1/4 px-8">
                               <h6 className="font-body text-xl font-bold mb-4 text-black">eCommerce</h6>
-                              <Link href="#" className="block py-2 text-black font-body text-base hover:text-theme-red transition-colors">Fashion</Link>
+                              <Link href="#" className="block py-2 text-black font-body text-base hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Fashion</Link>
                             </div>
                             <div className="w-2/4 px-4 flex justify-end">
                               <Image src="/images/nav-img.png" width={450} height={250} className="rounded-xl shadow-sm h-auto" alt="Nav image" />
@@ -212,33 +214,33 @@ export default function Header() {
 
                     {/* Impact */}
                     <li className="relative py-3 lg:py-[30px] px-2 group cursor-pointer">
-                      <a className="flex items-center gap-2 font-body text-black text-[17px] capitalize transition-colors whitespace-nowrap" role="button">
+                      <a className={`flex items-center gap-2 font-body text-[17px] capitalize transition-colors whitespace-nowrap group-hover:text-[#6ABD45] ${pathname.startsWith('/case-studies') || pathname.startsWith('/portfolio') ? 'text-[#6ABD45]' : 'text-black'}`} role="button">
                         Impact <ChevronDownIcon />
                       </a>
                       <ul className="absolute hidden group-hover:block bg-white top-[95%] -left-4 min-w-[200px] rounded-lg py-2 shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-[#0000002d] z-50">
-                        <li><Link href="/case-studies" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">Case Study</Link></li>
-                        <li><Link href="/portfolio" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">Portfolio</Link></li>
+                        <li><Link href="/case-studies" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Case Study</Link></li>
+                        <li><Link href="/portfolio" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Portfolio</Link></li>
                       </ul>
                     </li>
 
                     {/* Insights */}
                     <li className="relative py-3 lg:py-[30px] px-2 group cursor-pointer">
-                      <a className="flex items-center gap-2 font-body text-black text-[17px] capitalize transition-colors whitespace-nowrap" role="button">
+                      <a className={`flex items-center gap-2 font-body text-[17px] capitalize transition-colors whitespace-nowrap group-hover:text-[#6ABD45] ${pathname.startsWith('/blog') || pathname.startsWith('/insight') ? 'text-[#6ABD45]' : 'text-black'}`} role="button">
                         Insights <ChevronDownIcon />
                       </a>
                       <ul className="absolute hidden group-hover:block bg-white top-[95%] -left-4 min-w-[200px] rounded-lg py-2 shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-[#0000002d] z-50">
-                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">Blog</Link></li>
+                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Blog</Link></li>
                       </ul>
                     </li>
 
                     {/* About */}
                     <li className="relative py-3 lg:py-[30px] px-2 group cursor-pointer">
-                      <a className="flex items-center gap-2 font-body text-black text-[17px] capitalize transition-colors whitespace-nowrap" role="button">
+                      <a className={`flex items-center gap-2 font-body text-[17px] capitalize transition-colors whitespace-nowrap group-hover:text-[#6ABD45] ${pathname.startsWith('/about') || pathname.startsWith('/career') ? 'text-[#6ABD45]' : 'text-black'}`} role="button">
                         About <ChevronDownIcon />
                       </a>
                       <ul className="absolute hidden group-hover:block bg-white top-[95%] -left-4 min-w-[200px] rounded-lg py-2 shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-[#0000002d] z-50">
-                        <li><Link href="/about" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">About Us</Link></li>
-                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] transition-colors">Career</Link></li>
+                        <li><Link href="/about" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">About Us</Link></li>
+                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] font-body text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Career</Link></li>
                       </ul>
                     </li>
                   </ul>

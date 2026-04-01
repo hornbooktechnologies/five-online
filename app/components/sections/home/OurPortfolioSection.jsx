@@ -45,7 +45,7 @@ export default function OurPortfolioSection() {
       >
         {portfolioItems.map((work, i) => (
           <div key={i} className="outline-none">
-            <div className="relative group cursor-pointer overflow-hidden">
+            <div className="relative group overflow-hidden">
               <img src={`/images/fo-work/${work.img}`} className="w-full h-auto block" alt={work.category} />
 
               {/* Category badge top-left */}

@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import HumanCheck from "../components/ui/HumanCheck";
+import Button from '@/app/components/common/Button';
+import { ArrowRightIcon } from "../components/icons";
 
 const bestFitCards = [
   {
@@ -38,24 +40,6 @@ function HighlightChip({ children }) {
     <div className="inline-flex max-w-full items-center justify-center border border-[#6abd45] bg-[#eaffdf] px-5 py-2 text-center font-sans text-[15px] font-medium leading-6 text-black sm:text-[16px]">
       {children}
     </div>
-  );
-}
-
-function CtaLink({ href, label }) {
-  return (
-    <Link
-      href={href}
-      className="inline-flex min-h-[52px] items-center rounded-full bg-black px-6 py-3 font-sans text-[16px] text-white sm:text-[18px]"
-    >
-      <span>{label}</span>
-      <Image
-        src="/figma/about/icon-arrow-light.svg"
-        alt=""
-        width={16}
-        height={16}
-        className="ml-3"
-      />
-    </Link>
   );
 }
 
@@ -161,7 +145,10 @@ export default function ContactScene() {
           </p>
 
           <div className="mt-10">
-            <CtaLink href="#contact-form-panel" label="Book a Strategy Call" />
+            <Button href="#contact-form-panel" variant="primary" size="md">
+              Book a Strategy Call
+              <ArrowRightIcon />
+            </Button>
           </div>
 
           <div className="mt-6">
@@ -226,7 +213,7 @@ export default function ContactScene() {
 
       <section className="bg-[#f8f8f8]">
         <div className="mx-auto grid w-full max-w-[1440px] gap-10 px-6 py-16 sm:px-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:px-[60px] lg:py-20">
-          <div className="space-y-6">
+          <div className="space-y-6 self-center">
             <div className="overflow-hidden bg-white">
               <div className="relative aspect-[494/353]">
                 <Image
@@ -256,10 +243,6 @@ export default function ContactScene() {
               </div>
             </div>
 
-            <p className="max-w-[430px] font-sans text-[16px] leading-[28px] text-[#444]">
-              We review every application personally. If the fit is right, we
-              move quickly and keep the process direct.
-            </p>
           </div>
 
           <form
@@ -373,19 +356,10 @@ export default function ContactScene() {
             </div>
 
             <div className="mt-8 border-t border-[#ececec] pt-6">
-              <button
-                type="submit"
-                className="inline-flex min-h-[52px] items-center rounded-full bg-black px-6 py-3 font-sans text-[18px] text-white"
-              >
-                <span>Submit</span>
-                <Image
-                  src="/figma/about/icon-arrow-light.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="ml-3"
-                />
-              </button>
+              <Button type="submit" variant="primary" size="md">
+                Submit
+                <ArrowRightIcon />
+              </Button>
 
               <div className="mt-6 bg-[#eaffdf] px-5 py-3">
                 <p className="font-sans text-[15px] leading-[22px] text-black">

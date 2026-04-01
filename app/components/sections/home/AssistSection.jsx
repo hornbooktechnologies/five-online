@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import Link from 'next/link';
+import Button from "@/app/components/common/Button";
 
 export default function AssistSection() {
   const [assistKey, setAssistKey] = useState("newbusiness");
@@ -44,10 +44,10 @@ export default function AssistSection() {
           <div className="mb-8">
             <h2 className="text-[3rem] font-display leading-[4rem] text-black">What brings you here today?</h2>
           </div>
-          <div>
+          <div className="relative">
             <select
               id="capabilities"
-              className="w-full py-4 px-5 rounded-none border-0 border-b border-[#888] bg-white text-base cursor-pointer focus:outline-none font-sans appearance-none"
+              className="w-full py-4 pl-5 pr-12 rounded-none border-0 border-b border-[#888] bg-white text-base cursor-pointer focus:outline-none font-sans appearance-none"
               value={assistKey}
               onChange={(e) => setAssistKey(e.target.value)}
             >
@@ -58,6 +58,11 @@ export default function AssistSection() {
               <option value="performanceissue">Website maintenance & performance issues</option>
               <option value="aisearch">Making our website visible in AI search</option>
             </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-black">
+              <svg className="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
           </div>
         </div>
         <div
@@ -68,12 +73,12 @@ export default function AssistSection() {
             <h3 className="mb-4 font-display text-[28px] text-black">{assistData[assistKey].title}</h3>
             <p className="mb-5 text-sm font-sans text-black">{assistData[assistKey].desc}</p>
             <div className="flex gap-2 flex-wrap">
-              <Link href="#" className="bg-black text-white px-6 py-3 rounded-full text-sm font-sans hover:bg-gray-800 transition-colors">
+              <Button href="#" variant="primary" size="sm">
                 Explore Capabilities
-              </Link>
-              <Link href="#" className="bg-black text-white px-6 py-3 rounded-full text-sm font-sans hover:bg-gray-800 transition-colors">
+              </Button>
+              <Button href="#" variant="primary" size="sm">
                 Book a Strategy Call
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
