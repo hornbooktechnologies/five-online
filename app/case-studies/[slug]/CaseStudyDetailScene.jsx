@@ -228,7 +228,7 @@ export default function CaseStudyDetailScene({ cs }) {
 
   return (
     <main className='bg-[#fbfffa]'>
-      <section className='mx-auto w-full max-w-[1440px] px-6 pt-[100px] sm:px-8 sm:pt-[160px] lg:px-[60px] lg:pt-[120px]'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] pt-6 lg:pt-20'>
         <div className='grid lg:grid-cols-[480px_minmax(0,783px)] lg:items-center'>
           <div className='relative h-full flex flex-col justify-evenly overflow-hidden mt-0 lg:mt-[50px] gap-10 lg:gap-0'>
             {/* Decorative SVG from Figma is served directly to avoid format/optimization issues. */}
@@ -312,7 +312,7 @@ export default function CaseStudyDetailScene({ cs }) {
       </section>
       <StatStrip stats={content.stats} />
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 py-[48px] sm:px-8 sm:py-[60px] lg:px-[60px]'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
         <div className='flex flex-col gap-10'>
           <p className='font-display text-[28px] leading-none text-[#666] sm:text-[32px]'>
             Overview
@@ -346,7 +346,10 @@ export default function CaseStudyDetailScene({ cs }) {
           </div>
         </div>
 
-        <div className='mt-10 grid gap-5 lg:grid-cols-2 lg:mt-[51px]'>
+      </section>
+
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
+        <div className='grid gap-5 lg:grid-cols-2'>
           <div className='relative aspect-[649/543] overflow-hidden rounded-[16px] bg-[#f7f7f7]'>
             <Image
               src={content.previewVisuals[0]}
@@ -365,11 +368,6 @@ export default function CaseStudyDetailScene({ cs }) {
               sizes='649px'
             />
           </div>
-        </div>
-      </section>
-
-      <section className='mx-auto w-full max-w-[1440px] px-6 py-[35px] sm:px-8 lg:px-[60px]'>
-        <div className='grid gap-5 lg:grid-cols-2'>
           <article className='rounded-[16px] bg-[#f0f6ed] px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-14'>
             <h2 className='font-display text-[38px] capitalize leading-[1.18] text-black sm:text-[48px] sm:leading-[60px]'>
               The Real Problem
@@ -412,7 +410,7 @@ export default function CaseStudyDetailScene({ cs }) {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 py-[60px] sm:px-8 lg:px-[60px]'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
         <h2 className='text-center font-display text-[40px] capitalize leading-[1.2] text-black sm:text-[48px] sm:leading-[60px]'>
           Strategic Thinking
         </h2>
@@ -428,8 +426,8 @@ export default function CaseStudyDetailScene({ cs }) {
         </div>
       </section>
 
-      <section className='bg-[#f9fff6] py-[60px]'>
-        <div className='mx-auto w-full max-w-[1440px] px-6 sm:px-8 lg:px-[60px]'>
+      <section className='bg-[#f9fff6] py-16 lg:py-24'>
+        <div className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px]'>
           <h2 className='text-center font-display text-[40px] uppercase leading-[1.2] text-black sm:text-[48px] sm:leading-[60px]'>
             WHAT WE BUILT
           </h2>
@@ -590,7 +588,7 @@ export default function CaseStudyDetailScene({ cs }) {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 py-[86px] text-center sm:px-8 lg:px-[60px]'>
+      <section className='mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-16 lg:py-24'>
         <Link
           href={content.visitUrl}
           className='font-sans text-[18px] underline decoration-solid underline-offset-[4px]'

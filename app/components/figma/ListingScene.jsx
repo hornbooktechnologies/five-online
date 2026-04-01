@@ -324,8 +324,8 @@ export default function ListingScene({
 
   return (
     <main className='bg-[#f9fff6] pb-[74px] text-black lg:pb-0'>
-      <section className='mx-auto w-full max-w-[1440px] px-5 pb-10 pt-[108px] sm:px-8 sm:pb-14 sm:pt-[124px] lg:px-[60px] lg:pb-16 lg:pt-[176px]'>
-        <div className='mx-auto max-w-[1120px] text-center'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-6 lg:py-20'>
+        <div className='mx-auto text-center'>
           <h1 className='mx-auto max-w-[405px] whitespace-pre-line font-display text-[43px] leading-[1.15] text-black sm:max-w-[520px] sm:text-[56px] lg:max-w-none lg:text-[96px] lg:leading-[100px]'>
             {title}
           </h1>

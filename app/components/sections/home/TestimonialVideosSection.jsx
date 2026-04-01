@@ -17,7 +17,7 @@ export default function TestimonialVideosSection() {
   };
 
   return (
-    <section className="pt-10 pb-10 px-8 md:px-10 lg:px-[90px]">
+    <section className="px-6 lg:px-[60px] py-16 lg:py-24">
       <div className="w-full">
         <div className="flex flex-wrap text-center mb-10">
           <div className="w-full">

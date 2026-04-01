@@ -28,11 +28,11 @@ const philosophyCards = [
 ];
 
 const marketTiles = [
-  { image: "/figma/about/industry-1.jpg", label: "eCommerce & D2C" },
-  { image: "/figma/about/industry-2.jpg", label: "Enterprise & B2B" },
-  { image: "/figma/about/industry-3.jpg", label: "Real Estate" },
-  { image: "/figma/about/industry-4.jpg", label: "Retail" },
-  { image: "/figma/about/industry-5.jpg", label: "Lifestyle" },
+  { image: "/figma/about/industry-1.png", label: "eCommerce & D2C" },
+  { image: "/figma/about/industry-2.png", label: "Enterprise & B2B" },
+  { image: "/figma/about/industry-3.png", label: "Real Estate" },
+  { image: "/figma/about/industry-4.png", label: "Retail" },
+  { image: "/figma/about/industry-5.png", label: "Lifestyle" },
 ];
 
 const capabilityPills = [
@@ -115,7 +115,7 @@ export default function AboutScene() {
 
   return (
     <main className='bg-white text-black'>
-      <section className='mx-auto w-full max-w-[1440px] px-6 pb-16 pt-[140px] sm:px-8 sm:pb-20 sm:pt-[156px] lg:px-[60px] lg:pt-[176px]'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-6 lg:py-20'>
         <div className='mx-auto max-w-[1120px] text-center'>
           <h1 className='font-display text-[48px] leading-[0.96] text-black sm:text-[68px] lg:text-[96px] lg:leading-[100px]'>
             India&apos;s Revenue-First Web Design Company
@@ -148,7 +148,7 @@ export default function AboutScene() {
       </section>
 
       <section className='bg-[#f8f8f8]'>
-        <div className='mx-auto grid w-full max-w-[1440px] gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center lg:px-[60px] lg:py-24'>
+        <div className='mx-auto grid w-full max-w-[1440px] gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center px-6 lg:px-[60px] py-16 lg:py-24'>
           <div>
             <h2 className='max-w-[660px] whitespace-pre-line font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
               {"We Don't Build Websites.\nWe Engineer Growth Systems."}
@@ -206,7 +206,7 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 py-16 sm:px-8 lg:px-[60px] lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
         <div className='mx-auto max-w-[1120px] text-center'>
           <h2 className='font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
             Our Revenue Philosophy
@@ -244,8 +244,8 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='mx-auto w-full  py-16  lg:py-24'>
-        <div className='w-full max-w-[1440px] grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start px-6 sm:px-8 lg:px-[60px]'>
+      <section className='mx-auto w-full py-16 lg:py-24'>
+        <div className='w-full max-w-[1440px] grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start px-6 lg:px-[60px]'>
           <div>
             <h2 className='max-w-[620px] whitespace-pre-line font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
               {"Two Decades.\nMultiple Market Cycles."}
@@ -266,7 +266,7 @@ export default function AboutScene() {
           </div>
         </div>
 
-        <div className='mt-12 overflow-hidden mx-[-12px]'>
+        <div className='mt-12 overflow-hidden mx-[-12px] px-2'>
           <Slider
             dots={false}
             infinite={true}
@@ -355,7 +355,7 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 py-16 sm:px-8 lg:px-[60px] lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
         <div className='mx-auto max-w-[1120px] text-center'>
           <h2 className='font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
             A Structured Growth Team
@@ -388,18 +388,14 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='relative overflow-hidden bg-[#f8f8f8]'>
-        <div className='pointer-events-none absolute right-[-160px] top-0 hidden h-full w-[520px] opacity-60 lg:block'>
-          <Image
-            src='/figma/about/trust-decoration.png'
-            alt=''
-            fill
-            className='object-cover object-left'
-            sizes='520px'
-          />
-        </div>
 
-        <div className='relative mx-auto w-full max-w-[1440px] px-6 py-20 text-center sm:px-8 lg:px-[60px] lg:py-28'>
+      <section className='relative overflow-hidden bg-[#f8f8f8]'>
+        <img
+          src='/figma/about/trust-decoration.png'
+          className="absolute right-[-160px] top-0 object-cover object-left h-full"
+        />
+
+        <div className='relative mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-16 lg:py-24'>
           <h2 className='font-display text-[52px] leading-[0.98] text-black sm:text-[72px] lg:text-[96px] lg:leading-[100px]'>
             <span className='block'>Built in India.</span>
             <span className='block'>Trusted Globally.</span>
@@ -424,7 +420,7 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 py-16 sm:px-8 lg:px-[60px] lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
         <div className='grid gap-10 lg:grid-cols-[320px_minmax(0,1fr)]'>
           <div>
             <h2 className='font-body text-[40px] font-bold leading-[1.2] text-black sm:text-[48px]'>
@@ -454,7 +450,7 @@ export default function AboutScene() {
 
       <section className='relative isolate overflow-hidden bg-black text-white'>
         <Image
-          src='/figma/about/cta-background.png'
+          src='/figma/case-studies/cta-bg.png'
           alt=''
           fill
           className='object-cover'

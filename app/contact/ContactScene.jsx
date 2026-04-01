@@ -132,7 +132,7 @@ export default function ContactScene() {
 
   return (
     <main className="bg-white text-black">
-      <section className="mx-auto w-full max-w-[1440px] px-6 pb-16 pt-[140px] sm:px-8 sm:pb-20 sm:pt-[156px] lg:px-[60px] lg:pt-[176px]">
+      <section className="mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-6 lg:py-20">
         <div className="mx-auto max-w-[1080px] text-center">
           <h1 className="font-display text-[48px] leading-[0.96] text-black sm:text-[68px] lg:text-[96px] lg:leading-[100px]">
             Build Revenue Engine.
@@ -157,7 +157,7 @@ export default function ContactScene() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1440px] px-6 pb-16 sm:px-8 sm:pb-20 lg:px-[60px]">
+      <section className="mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-6 lg:py-20">
         <h2 className="text-center font-display text-[42px] leading-[1.1] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]">
           Who We&apos;re Best Suited For
         </h2>
@@ -190,7 +190,7 @@ export default function ContactScene() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1440px] px-6 pb-16 text-center sm:px-8 sm:pb-20 lg:px-[60px]">
+      <section className="mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-6 lg:py-20">
         <h2 className="font-display text-[42px] leading-[1.1] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]">
           Who We&apos;re Not For
         </h2>
@@ -211,10 +211,10 @@ export default function ContactScene() {
         </div>
       </section>
 
-      <section className="bg-[#f8f8f8]">
-        <div className="mx-auto grid w-full max-w-[1440px] gap-10 px-6 py-16 sm:px-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:px-[60px] lg:py-20">
-          <div className="space-y-6 self-center">
-            <div className="overflow-hidden bg-white">
+      <section className="bg-[#f8f8f8] px-6 lg:px-[60px] py-6 lg:py-20">
+        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 w-full max-w-[1440px] gap-10">
+          <div className="self-center">
+            <div className="bg-white">
               <div className="relative aspect-[494/353]">
                 <Image
                   src="/figma/contact/mumbai.jpg"
@@ -242,9 +242,7 @@ export default function ContactScene() {
                 </a>
               </div>
             </div>
-
           </div>
-
           <form
             id="contact-form-panel"
             className="bg-white px-6 py-8 sm:px-8 lg:px-10"
@@ -348,11 +346,11 @@ export default function ContactScene() {
                 />
               </div>
 
-              <HumanCheck
+              {/* <HumanCheck
                 value={form.notRobot}
                 onChange={updateVerification}
                 error={errors.notRobot}
-              />
+              /> */}
             </div>
 
             <div className="mt-8 border-t border-[#ececec] pt-6">

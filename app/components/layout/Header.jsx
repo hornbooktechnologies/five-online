@@ -167,7 +167,7 @@ export default function Header() {
             <nav className="flex items-center w-full px-4 relative">
               <div className="w-full flex justify-between items-center">
                 <Link href="/" className="mr-4 py-1">
-                  <Image src="/images/fiveonline-logo.png" width={180} height={40} alt="Five Online Web Solutions Pvt Ltd" className="h-auto w-auto max-w-[200px]" />
+                  <Image src="/images/fiveonline-logo.png" width={180} height={40} alt="Five Online Web Solutions Pvt Ltd" className="h-auto w-auto max-w-[220px]" />
                 </Link>
 
                 <div className="flex-grow flex items-center justify-end">

@@ -24,10 +24,10 @@ export default function TrustedPartnersSection() {
   ];
 
   return (
-    <section className="p-0 pt-20 pb-20 ">
+    <section className="p-0 py-16 lg:py-24 ">
       <div className="w-full">
         <div className="flex flex-wrap">
-          <div className="w-full text-center mb-4 px-8 md:px-20 lg:px-[90px]">
+          <div className="w-full text-center mb-4 px-6 lg:px-[60px]">
             <h2 className="text-[3.375rem] leading-[4rem] font-display mb-8 text-black">Trusted by Ambitious Brands</h2>
             <p className="font-sans text-base mb-4">Delivering high-performance websites since 2005.</p>
           </div>

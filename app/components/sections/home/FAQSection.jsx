@@ -14,7 +14,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="pt-20 pb-20 px-8 md:px-20 lg:px-[90px]">
+    <section className="px-6 lg:px-[60px] py-16 lg:py-24">
       <div className="max-w-[1140px] mx-auto">
         <div className="flex flex-wrap">
           <div className="w-full lg:w-5/12 mb-8 lg:mb-0 pr-0 lg:pr-12 text-left">

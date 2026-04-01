@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import Link from 'next/link';
 
 export default function AwardsSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -54,17 +53,17 @@ export default function AwardsSection() {
       {isVideoOpen && (
         <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
           <div className="relative w-full max-w-4xl bg-black rounded-lg shadow-2xl overflow-hidden aspect-video">
-            <button 
+            <button
               onClick={() => setIsVideoOpen(false)}
               className="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors bg-black/50 w-10 h-10 flex items-center justify-center rounded-full"
             >
               <i className="fas fa-times text-xl"></i>
             </button>
-            <video 
-              width="100%" 
-              height="100%" 
-              controls 
-              autoPlay 
+            <video
+              width="100%"
+              height="100%"
+              controls
+              autoPlay
               className="w-full h-full object-contain"
             >
               <source src={awardVideoUrl} type="video/mp4" />

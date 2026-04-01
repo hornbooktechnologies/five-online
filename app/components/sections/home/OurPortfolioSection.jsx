@@ -18,7 +18,7 @@ export default function OurPortfolioSection() {
   ];
 
   return (
-    <section className="p-0 pt-10 pb-10 mt-10 mb-10 relative">
+    <section className="py-16 lg:py-24 relative">
       <div className="max-w-[1320px] mx-auto mb-8 px-4">
         <div className="w-full text-center">
           <h2 className="text-[3.375rem] font-display leading-[4rem] text-black mb-4">Our Portfolio</h2>

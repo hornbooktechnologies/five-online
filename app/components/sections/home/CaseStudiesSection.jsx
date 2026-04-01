@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function CaseStudiesSection() {
   return (
-    <section className="mb-10 pb-10 px-8 md:px-10 lg:px-[90px]">
+    <section className="px-6 lg:px-[60px] py-16 lg:py-24">
       <div className="max-w-[1140px] mx-auto">
         <div className="flex flex-wrap">
           <div className="w-full text-center">

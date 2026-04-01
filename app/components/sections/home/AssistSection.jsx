@@ -66,7 +66,7 @@ export default function AssistSection() {
           </div>
         </div>
         <div
-          className="bg-cover bg-center relative transition-all duration-500 ease-in-out p-4 md:p-12 block md:flex justify-center items-centers"
+          className="bg-cover bg-center relative transition-all duration-500 ease-in-out px-4 md:px-12 py-24 block md:flex justify-center items-centers"
           style={{ backgroundImage: `url('${assistData[assistKey].img}')` }}
         >
           <div className="bg-white/70 backdrop-blur-[20px] p-4 md:p-[25px] md:p-10 rounded-[25px] w-full md:w-4/5">
