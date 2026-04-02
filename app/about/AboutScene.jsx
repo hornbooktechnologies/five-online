@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import Slider from "react-slick";
 import { faqsByPage } from "@/lib/data/faqs";
 import Button from '@/app/components/common/Button';
 import { ArrowRightIcon } from "../components/icons";
+
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 const philosophyCards = [
   {
@@ -76,6 +78,22 @@ const socialLinks = [
   },
 ];
 
+function getSlidesToShowForWidth(width) {
+  if (width < 480) {
+    return 1;
+  }
+
+  if (width < 1280) {
+    return 2;
+  }
+
+  if (width < 1440) {
+    return 3;
+  }
+
+  return 4;
+}
+
 
 function HighlightChip({ children }) {
   return (
@@ -112,6 +130,18 @@ function FaqItem({ faq, open, onToggle }) {
 
 export default function AboutScene() {
   const [openFaq, setOpenFaq] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(() =>
+    typeof window === "undefined" ? 4 : getSlidesToShowForWidth(window.innerWidth)
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesToShow(getSlidesToShowForWidth(window.innerWidth));
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <main className='bg-white text-black'>
@@ -271,17 +301,12 @@ export default function AboutScene() {
             dots={false}
             infinite={true}
             speed={500}
-            slidesToShow={4}
+            slidesToShow={slidesToShow}
             slidesToScroll={1}
             autoplay={true}
             autoplaySpeed={3000}
             arrows={false}
-            responsive={[
-              { breakpoint: 1280, settings: { slidesToShow: 3 } },
-              { breakpoint: 1024, settings: { slidesToShow: 2 } },
-              { breakpoint: 640, settings: { slidesToShow: 2 } },
-              { breakpoint: 480, settings: { slidesToShow: 1 } }
-            ]}
+            key={`about-slider-${slidesToShow}`}
           >
             {marketTiles.map((tile, index) => (
               <div key={`${tile.label}-${index}`} className="outline-none px-3">

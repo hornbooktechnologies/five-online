@@ -48,8 +48,8 @@ const MOBILE_MENU_ITEMS = [
     id: 'impact',
     label: 'Impact',
     items: [
-      { label: 'Case Study', href: '#' },
-      { label: 'Portfolio', href: '#' }
+      { label: 'Case Study', href: '/case-studies' },
+      { label: 'Portfolio', href: '/portfolio' }
     ]
   },
   {
@@ -63,7 +63,7 @@ const MOBILE_MENU_ITEMS = [
     id: 'about',
     label: 'About',
     items: [
-      { label: 'About Us', href: '#' },
+      { label: 'About Us', href: '/about' },
       { label: 'Career', href: '#' }
     ]
   }
@@ -149,7 +149,7 @@ export default function Header() {
           ))}
           {menuId === 'main' && (
             <>
-              <li className="border-b border-black/10"><Link href="#" className="block p-4 font-body text-base hover:text-[#6ABD45] transition-colors" onClick={closeMobileMenu}>Contact Us</Link></li>
+              <li className="border-b border-black/10"><Link href="/contact" className="block p-4 font-body text-base hover:text-[#6ABD45] transition-colors" onClick={closeMobileMenu}>Contact Us</Link></li>
               <li className="border-b border-black/10"><Link href="#" className="block p-4 font-body text-base hover:text-[#6ABD45] transition-colors" onClick={closeMobileMenu}>Terms & Conditions</Link></li>
             </>
           )}

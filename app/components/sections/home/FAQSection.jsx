@@ -20,7 +20,7 @@ export default function FAQSection() {
           <div className="w-full lg:w-5/12 mb-8 lg:mb-0 pr-0 lg:pr-12 text-left">
             <div className="section-title">
               <h2 className="text-[3rem] font-display leading-tight text-black mb-3">The Answer Stack</h2>
-              <p className="font-sans text-base text-gray-600">Straight answers to common business questions about websites, growth, and digital presence.</p>
+              <p className="font-sans text-base text-[#212529]">Straight answers to common business questions about websites, growth, and digital presence.</p>
             </div>
           </div>
           <div className="w-full lg:w-7/12">
@@ -28,15 +28,15 @@ export default function FAQSection() {
               {faqs.map((faq, i) => (
                 <div key={i} className="border-b border-gray-200">
                   <button
-                    className="w-full text-left px-0 py-5 font-sans text-base flex justify-between items-center text-black cursor-pointer"
+                    className="w-full text-left px-0 py-5 font-sans text-[18px] flex justify-between items-center text-black cursor-pointer"
                     onClick={() => toggleFaq(i + 1)}
                   >
-                    <span className="flex-1 pr-4 font-bold">{faq.q}</span>
+                    <span className="flex-1 pr-4">{faq.q}</span>
                     <span className="w-8 h-8 rounded-full bg-black flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-lg font-bold leading-none">{openFaq === i + 1 ? '−' : '+'}</span>
                     </span>
                   </button>
-                  <div className={`font-sans text-gray-600 text-sm overflow-hidden transition-all duration-300 ${openFaq === i + 1 ? 'max-h-[500px] opacity-100 pb-5' : 'max-h-0 opacity-0'}`}>
+                  <div className={`font-sans text-[#212529] text-sm overflow-hidden transition-all duration-300 ${openFaq === i + 1 ? 'max-h-[500px] opacity-100 pb-5' : 'max-h-0 opacity-0'}`}>
                     {faq.a}
                   </div>
                 </div>

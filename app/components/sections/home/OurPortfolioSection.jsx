@@ -5,6 +5,31 @@ import ArrowRightIcon from '../../icons/ArrowRightIcon';
 import Button from '../../common/Button';
 
 export default function OurPortfolioSection() {
+  const [slidesToShow, setSlidesToShow] = React.useState(5);
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 480) {
+        setSlidesToShow(1);
+      } else if (width < 768) {
+        setSlidesToShow(2);
+      } else if (width < 1024) {
+        setSlidesToShow(3);
+      } else if (width < 1400) {
+        setSlidesToShow(4);
+      } else {
+        setSlidesToShow(5);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const portfolioItems = [
     { img: "aditya-birla.png", logo: "aditya-birla-logo.png", category: "Corporate" },
     { img: "garware.png", logo: "garware-logo.png", category: "Corporate" },
@@ -26,23 +51,19 @@ export default function OurPortfolioSection() {
         </div>
       </div>
 
-      <Slider
-        dots={false}
-        infinite={true}
-        speed={500}
-        slidesToShow={5}
-        slidesToScroll={1}
-        autoplay={true}
-        autoplaySpeed={3000}
-        arrows={false}
-        className="portfolio-slider"
-        responsive={[
-          { breakpoint: 1400, settings: { slidesToShow: 4 } },
-          { breakpoint: 1024, settings: { slidesToShow: 3 } },
-          { breakpoint: 768, settings: { slidesToShow: 2 } },
-          { breakpoint: 480, settings: { slidesToShow: 1 } }
-        ]}
-      >
+      {isMounted && (
+        <Slider
+          dots={false}
+          infinite={true}
+          speed={500}
+          slidesToShow={slidesToShow}
+          slidesToScroll={1}
+          autoplay={true}
+          autoplaySpeed={3000}
+          arrows={false}
+          className="portfolio-slider"
+          key={`portfolio-slider-${slidesToShow}`}
+        >
         {portfolioItems.map((work, i) => (
           <div key={i} className="outline-none">
             <div className="relative group overflow-hidden">
@@ -63,7 +84,8 @@ export default function OurPortfolioSection() {
             </div>
           </div>
         ))}
-      </Slider>
+        </Slider>
+      )}
 
       <div className="w-full text-center mt-8">
         <Button href="#" variant="primary" size="md">

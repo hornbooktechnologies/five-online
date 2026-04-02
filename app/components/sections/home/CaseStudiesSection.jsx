@@ -8,14 +8,14 @@ export default function CaseStudiesSection() {
         <div className="flex flex-wrap">
           <div className="w-full text-center">
             <h2 className="text-[3.375rem] font-display leading-[4rem] text-black mb-3">Proof. Not Promises.</h2>
-            <p className="font-sans text-base text-gray-600">See how we helped brands increase revenue, leads, and growth.</p>
+            <p className="font-sans text-base text-[#212529]">See how we helped brands increase revenue, leads, and growth.</p>
           </div>
 
           <div className="w-full mt-4 border py-6">
             <div className="flex flex-wrap items-center px-2">
               <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
                 <h3 className="text-2xl font-display text-black mb-3">Garware Hi-Tech</h3>
-                <p className="font-sans text-gray-600">Digital Platform Transformation for Enterprise Growth</p>
+                <p className="font-sans text-[#212529]">Digital Platform Transformation for Enterprise Growth</p>
               </div>
               <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
                 <div className="flex flex-wrap">
@@ -26,7 +26,7 @@ export default function CaseStudiesSection() {
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
                         </span>
                       </h4>
-                      <p className="font-sans text-gray-600 text-sm">Product Page Engagement</p>
+                      <p className="font-sans text-[#212529] text-sm">Product Page Engagement</p>
                     </div>
                   </div>
                   <div className="w-1/2">
@@ -36,7 +36,7 @@ export default function CaseStudiesSection() {
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
                         </span>
                       </h4>
-                      <p className="font-sans text-gray-600 text-sm">Enquiry Interaction</p>
+                      <p className="font-sans text-[#212529] text-sm">Enquiry Interaction</p>
                     </div>
                   </div>
                 </div>
@@ -56,20 +56,20 @@ export default function CaseStudiesSection() {
             <div className="flex flex-wrap items-center px-2">
               <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
                 <h3 className="text-2xl font-display text-black mb-3">Buget Store</h3>
-                <p className="font-sans text-gray-600">Conversion-First Ecommerce Launch</p>
+                <p className="font-sans text-[#212529]">Conversion-First Ecommerce Launch</p>
               </div>
               <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
                 <div className="flex flex-wrap">
                   <div className="w-1/2">
                     <div className="growth-pointers">
                       <h4 className="mb-2"><img src="/images/24hour-icon.png" alt="24hr" className="h-10" /></h4>
-                      <p className="font-sans text-gray-600 text-sm">Product Page Engagement</p>
+                      <p className="font-sans text-[#212529] text-sm">Product Page Engagement</p>
                     </div>
                   </div>
                   <div className="w-1/2">
                     <div className="growth-pointers">
                       <h4 className="mb-2"><img src="/images/checkout-completion-icon.png" alt="Checkout completion" className="h-10" /></h4>
-                      <p className="font-sans text-gray-600 text-sm">Enquiry Interaction</p>
+                      <p className="font-sans text-[#212529] text-sm">Enquiry Interaction</p>
                     </div>
                   </div>
                 </div>
