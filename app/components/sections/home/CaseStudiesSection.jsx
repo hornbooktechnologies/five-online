@@ -7,21 +7,21 @@ export default function CaseStudiesSection() {
       <div className="max-w-[1140px] mx-auto">
         <div className="flex flex-wrap">
           <div className="w-full text-center">
-            <h2 className="text-[3.375rem] font-display leading-[4rem] text-black mb-3">Proof. Not Promises.</h2>
+            <h2 className="text-[3.375rem] leading-[4rem] text-black mb-3">Proof. Not Promises.</h2>
             <p className="text-base text-[#212529]">See how we helped brands increase revenue, leads, and growth.</p>
           </div>
 
           <div className="w-full mt-4 border py-6">
             <div className="flex flex-wrap items-center px-2">
               <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
-                <h3 className="text-2xl font-display text-black mb-3">Garware Hi-Tech</h3>
+                <h3 className="text-2xl text-black mb-3">Garware Hi-Tech</h3>
                 <p className="text-[#212529]">Digital Platform Transformation for Enterprise Growth</p>
               </div>
               <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
                 <div className="flex flex-wrap">
                   <div className="w-1/2">
                     <div className="growth-pointers">
-                      <h4 className="text-3xl font-display font-bold text-black mb-2 flex items-center">+38%
+                      <h4 className="text-3xl font-bold text-black mb-2 flex items-center">+38%
                         <span className="ml-2 text-theme-blue">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
                         </span>
@@ -31,7 +31,7 @@ export default function CaseStudiesSection() {
                   </div>
                   <div className="w-1/2">
                     <div className="growth-pointers">
-                      <h4 className="text-3xl font-display font-bold text-black mb-2 flex items-center">+22%
+                      <h4 className="text-3xl font-bold text-black mb-2 flex items-center">+22%
                         <span className="ml-2 text-theme-blue">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
                         </span>
@@ -55,7 +55,7 @@ export default function CaseStudiesSection() {
           <div className="w-full border py-6 mt-4">
             <div className="flex flex-wrap items-center px-2">
               <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
-                <h3 className="text-2xl font-display text-black mb-3">Buget Store</h3>
+                <h3 className="text-2xl text-black mb-3">Buget Store</h3>
                 <p className="text-[#212529]">Conversion-First Ecommerce Launch</p>
               </div>
               <div className="w-full lg:w-1/2 mb-4 lg:mb-0">

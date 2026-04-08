@@ -46,7 +46,7 @@ export default function OurPortfolioSection() {
     <section className="py-12 relative">
       <div className="max-w-[1320px] mx-auto mb-8 px-4">
         <div className="w-full text-center">
-          <h2 className="text-[3.375rem] font-display leading-[4rem] text-black mb-4">Our Portfolio</h2>
+          <h2 className="text-[3.375rem] leading-[4rem] text-black mb-4">Our Portfolio</h2>
           <p className="text-base mb-4">A glimpse into some of the websites we&apos;ve designed for brands across industries.</p>
         </div>
       </div>
@@ -60,6 +60,8 @@ export default function OurPortfolioSection() {
           slidesToScroll={1}
           autoplay={true}
           autoplaySpeed={2000}
+          pauseOnHover={false}
+          pauseOnFocus={false}
           arrows={false}
           className="portfolio-slider"
           key={`portfolio-slider-${slidesToShow}`}

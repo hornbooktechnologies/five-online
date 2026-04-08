@@ -147,7 +147,7 @@ export default function AboutScene() {
     <main className='bg-white text-black'>
       <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='mx-auto max-w-[1120px] text-center'>
-          <h1 className='font-display text-[48px] leading-[0.96] text-black sm:text-[68px] lg:text-[96px] lg:leading-[100px]'>
+          <h1 className='text-[48px] leading-[0.96] text-black sm:text-[68px] lg:text-[96px] lg:leading-[100px]'>
             India&apos;s Revenue-First Web Design Company
           </h1>
 
@@ -180,7 +180,7 @@ export default function AboutScene() {
       <section className='bg-[#f8f8f8]'>
         <div className='mx-auto grid w-full max-w-[1440px] gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center px-6 lg:px-[60px] py-12'>
           <div>
-            <h2 className='max-w-[660px] whitespace-pre-line font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
+            <h2 className='max-w-[660px] whitespace-pre-line text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
               {"We Don't Build Websites.\nWe Engineer Growth Systems."}
             </h2>
 
@@ -238,7 +238,7 @@ export default function AboutScene() {
 
       <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='mx-auto max-w-[1120px] text-center'>
-          <h2 className='font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
+          <h2 className='text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
             Our Revenue Philosophy
           </h2>
           <div className='mt-8 space-y-1 text-[18px] leading-[28px] text-black'>
@@ -277,7 +277,7 @@ export default function AboutScene() {
       <section className='mx-auto w-full py-12'>
         <div className='w-full max-w-[1440px] grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start px-6 lg:px-[60px]'>
           <div>
-            <h2 className='max-w-[620px] whitespace-pre-line font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
+            <h2 className='max-w-[620px] whitespace-pre-line text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
               {"Two Decades.\nMultiple Market Cycles."}
             </h2>
           </div>
@@ -345,7 +345,7 @@ export default function AboutScene() {
             <div></div>
 
             <div className='bg-black/90 px-8 py-10'>
-              <h3 className='font-display text-[40px] leading-[44px] text-white sm:text-[48px]'>
+              <h3 className='text-[40px] leading-[44px] text-white sm:text-[48px]'>
                 Nayan Khandor
               </h3>
               <div className='mt-6 border-l border-[#6ABD45] pl-6'>
@@ -382,7 +382,7 @@ export default function AboutScene() {
 
       <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='mx-auto max-w-[1120px] text-center'>
-          <h2 className='font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
+          <h2 className='text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
             A Structured Growth Team
           </h2>
           <div className='mt-8 space-y-1 text-[18px] leading-[28px] text-black'>
@@ -420,7 +420,7 @@ export default function AboutScene() {
         />
 
         <div className='relative mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-12'>
-          <h2 className='font-display text-[52px] leading-[0.98] text-black sm:text-[72px] lg:text-[96px] lg:leading-[100px]'>
+          <h2 className='text-[52px] leading-[0.98] text-black sm:text-[72px] lg:text-[96px] lg:leading-[100px]'>
             <span className='block'>Built in India.</span>
             <span className='block'>Trusted Globally.</span>
           </h2>
@@ -483,7 +483,7 @@ export default function AboutScene() {
         <div className='absolute inset-0 bg-black/60' />
 
         <div className='relative mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-16 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-[60px] lg:py-20'>
-          <h2 className='max-w-[910px] font-display text-[42px] leading-[1.08] text-white sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
+          <h2 className='max-w-[910px] text-[42px] leading-[1.08] text-white sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
             Schedule a 30-minute call with CEO to see if we are a good match.
           </h2>
 

@@ -5,6 +5,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import WhatsAppButton from "./components/common/WhatsAppButton";
 import AosInit from "./components/common/AosInit";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 export const metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
       </head>
       <body className="min-h-full flex flex-col">
+        <ScrollToTop />
         <AosInit />
         <Header />
         <div className="flex-1">{children}</div>

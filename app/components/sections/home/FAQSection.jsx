@@ -19,7 +19,7 @@ export default function FAQSection() {
         <div className="flex flex-wrap">
           <div className="w-full lg:w-5/12 mb-8 lg:mb-0 pr-0 lg:pr-12 text-left">
             <div className="section-title">
-              <h2 className="text-[3rem] font-display leading-tight text-black mb-3">The Answer Stack</h2>
+              <h2 className="text-[3rem] leading-tight text-black mb-3">The Answer Stack</h2>
               <p className="text-base text-[#212529]">Straight answers to common business questions about websites, growth, and digital presence.</p>
             </div>
           </div>

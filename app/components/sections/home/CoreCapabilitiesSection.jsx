@@ -16,7 +16,7 @@ export default function CoreCapabilitiesSection() {
       <div className="max-w-[1320px] mx-auto">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4 text-center mb-4">
-            <h2 className="text-[3.375rem] leading-[4rem] font-display text-black mb-8">Core Capabilities</h2>
+            <h2 className="text-[3.375rem] leading-[4rem] text-black mb-8">Core Capabilities</h2>
           </div>
 
           {capabilities.map((cap, i) => (
@@ -27,7 +27,7 @@ export default function CoreCapabilitiesSection() {
                   <div className="absolute inset-0 rounded-[1.5rem]" style={{ background: 'linear-gradient(to bottom, #00000000 20.77%, #000000)' }}></div>
                 </div>
                 <div className="absolute bottom-5 left-5 w-[90%] text-left z-10">
-                  <h4 className="text-2xl text-white font-display mb-4">{cap.title}</h4>
+                  <h4 className="text-2xl text-white mb-4">{cap.title}</h4>
                   <p className="text-base text-white leading-6">{cap.desc}</p>
                 </div>
               </div>

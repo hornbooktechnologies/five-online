@@ -187,7 +187,7 @@ function StatStrip({ stats }) {
             key={`${stat.value}-${stat.label}-${index}`}
             className='flex items-center justify-start lg:justify-center gap-4'
           >
-            <p className='font-display text-[30px] leading-[30px] text-[#6abd45] sm:text-[36px] sm:leading-[36px]'>
+            <p className='text-[30px] leading-[30px] text-[#6abd45] sm:text-[36px] sm:leading-[36px]'>
               {stat.value}
             </p>
             <p className='text-[18px] capitalize leading-[28px] text-white sm:text-[20px] sm:leading-[30px]'>
@@ -213,7 +213,7 @@ function StrategyCard({ title, body, className = "" }) {
     <article
       className={`flex flex-col gap-[100px] justify-between rounded-[8px] bg-[#fafafa] p-6 ${className}`}
     >
-      <h3 className='font-display text-[22px] leading-[32px] text-black sm:text-[24px] sm:leading-[36px]'>
+      <h3 className='text-[22px] leading-[32px] text-black sm:text-[24px] sm:leading-[36px]'>
         {title}
       </h3>
       <p className='text-[16px] leading-[28px] text-[#333] sm:leading-[30px]'>
@@ -235,18 +235,18 @@ export default function CaseStudyDetailScene({ cs }) {
               src='/figma/case-study-detail/hero-scribble-top.svg'
               alt=''
               aria-hidden='true'
-              className='absolute left-[270px] top-[80px] hidden lg:block'
+              className='absolute left-[270px] top-[50px] hidden lg:block'
               style={{ width: 299, height: 39 }}
             />
             <img
               src='/figma/case-study-detail/hero-scribble-bottom-1.svg'
               alt=''
               aria-hidden='true'
-              className='absolute left-[-130px] top-[310px] hidden lg:block'
+              className='absolute left-[-130px] top-[330px] hidden lg:block'
               style={{ width: 269, height: 39 }}
             />
             <div>
-              <h1 className='font-display text-[40px] leading-[1.08] text-black sm:text-[48px] sm:leading-[64px]'>
+              <h1 className='text-[40px] leading-[1.08] text-black sm:text-[48px] sm:leading-[64px]'>
                 {content.heroTitle}
               </h1>
               <p className='mt-6 whitespace-pre-line text-[18px] leading-[28px] text-[#666] sm:text-[20px] sm:leading-[30px]'>
@@ -350,10 +350,10 @@ export default function CaseStudyDetailScene({ cs }) {
             />
           </div>
           <article className='rounded-[16px] bg-[#f0f6ed] px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-14'>
-            <h2 className='font-display text-[38px] capitalize leading-[1.18] text-black sm:text-[48px] sm:leading-[60px]'>
+            <h2 className='text-[38px] capitalize leading-[1.18] text-black sm:text-[48px] sm:leading-[60px]'>
               The Real Problem
             </h2>
-            <p className='mt-[16px] font-display text-[16px] leading-none text-[#333]'>
+            <p className='mt-[16px] text-[16px] leading-none text-[#333]'>
               {content.problemLead}
             </p>
 
@@ -384,7 +384,7 @@ export default function CaseStudyDetailScene({ cs }) {
               aria-hidden='true'
               className='w-[125px] h-[125px]'
             />
-            <p className='text-center font-display text-[30px] capitalize leading-[1.35] text-black sm:text-[36px] sm:leading-[48px]'>
+            <p className='text-center text-[30px] capitalize leading-[1.35] text-black sm:text-[36px] sm:leading-[48px]'>
               {content.problemInsight}
             </p>
           </article>
@@ -392,7 +392,7 @@ export default function CaseStudyDetailScene({ cs }) {
       </section>
 
       <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
-        <h2 className='text-center font-display text-[40px] capitalize leading-[1.2] text-black sm:text-[48px] sm:leading-[60px]'>
+        <h2 className='text-center text-[40px] capitalize leading-[1.2] text-black sm:text-[48px] sm:leading-[60px]'>
           Strategic Thinking
         </h2>
 
@@ -409,7 +409,7 @@ export default function CaseStudyDetailScene({ cs }) {
 
       <section className='bg-[#f9fff6] py-12'>
         <div className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px]'>
-          <h2 className='text-center font-display text-[40px] uppercase leading-[1.2] text-black sm:text-[48px] sm:leading-[60px]'>
+          <h2 className='text-center text-[40px] uppercase leading-[1.2] text-black sm:text-[48px] sm:leading-[60px]'>
             WHAT WE BUILT
           </h2>
 
@@ -576,7 +576,7 @@ export default function CaseStudyDetailScene({ cs }) {
         >
           Visit Website
         </Link>
-        <h2 className='mx-auto mt-[40px] max-w-[1096px] whitespace-pre-line font-display text-[38px] capitalize leading-[1.28] text-black sm:mt-[52px] sm:text-[48px] sm:leading-[72px]'>
+        <h2 className='mx-auto mt-[40px] max-w-[1096px] whitespace-pre-line text-[38px] capitalize leading-[1.28] text-black sm:mt-[52px] sm:text-[48px] sm:leading-[72px]'>
           {content.closingHeadline}
         </h2>
         <p className='mt-[28px] text-[18px] leading-[28px] text-[#666] sm:mt-[40px] sm:text-[20px] sm:leading-[30px]'>

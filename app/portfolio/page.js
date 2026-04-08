@@ -10,7 +10,7 @@ export default function PortfolioPage() {
   return (
     <ListingScene
       assetBasePath="/figma/portfolio"
-      title={"Real Projects.\nReal Business Impact."}
+      title={`Real Projects. <br /> Real Business Impact.`}
       titleWidth={1030}
       subtitle="A selection of brands we\u2019ve helped launch, scale, and transform online."
       filterGroups={[

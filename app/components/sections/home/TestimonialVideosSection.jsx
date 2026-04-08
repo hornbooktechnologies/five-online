@@ -33,6 +33,8 @@ export default function TestimonialVideosSection() {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 3000,
+    pauseOnHover: false,
+    pauseOnFocus: false,
   };
 
   return (
@@ -40,7 +42,7 @@ export default function TestimonialVideosSection() {
       <div className="w-full">
         <div className="flex flex-wrap text-center">
           <div className="w-full">
-            <h2 className="text-[3.375rem] font-display leading-[4rem] text-black mb-3">Real Words. Real Wins.</h2>
+            <h2 className="text-[3.375rem] leading-[4rem] text-black mb-3">Real Words. Real Wins.</h2>
             <p className="text-base text-[#212529]">These stories reveal why brands choose Five Online</p>
           </div>
           <div className="w-full mt-10">

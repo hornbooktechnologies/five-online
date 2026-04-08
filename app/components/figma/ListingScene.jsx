@@ -326,9 +326,9 @@ export default function ListingScene({
     <main className='bg-[#f9fff6] text-black lg:pb-0'>
       <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12 mb-12'>
         <div className='mx-auto text-center'>
-          <h1 className='mx-auto max-w-[405px] whitespace-pre-line font-display text-[43px] leading-[1.15] text-black sm:max-w-[520px] sm:text-[56px] lg:max-w-none lg:text-[96px] lg:leading-[100px]'>
-            {title}
-          </h1>
+          <h1 className='mx-auto max-w-[405px] whitespace-pre-line text-[43px] leading-[1.15] text-black sm:max-w-[520px] sm:text-[56px] lg:max-w-none lg:text-[96px] lg:leading-[100px]'
+            dangerouslySetInnerHTML={{ __html: title?.replace(/\n/g, '<br />') }}
+          />
           <p className='mx-auto mt-7 max-w-[342px]  text-[18px] leading-[26px] text-black sm:max-w-[560px] lg:mt-8 lg:max-w-[700px] lg:leading-[28px]'>
             {subtitle}
           </p>

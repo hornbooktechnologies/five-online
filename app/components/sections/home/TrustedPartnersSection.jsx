@@ -35,6 +35,8 @@ export default function TrustedPartnersSection() {
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
+    pauseOnHover: false,
+    pauseOnFocus: false,
   };
 
   const brands = [
@@ -46,7 +48,7 @@ export default function TrustedPartnersSection() {
       <div className="w-full">
         <div className="flex flex-wrap">
           <div className="w-full text-center mb-4 px-6 lg:px-[60px]">
-            <h2 className="text-[3.375rem] leading-[4rem] font-display mb-8 text-black">Trusted by Ambitious Brands</h2>
+            <h2 className="text-[3.375rem] leading-[4rem] mb-8 text-black">Trusted by Ambitious Brands</h2>
             <p className="text-base mb-4">Delivering high-performance websites since 2005.</p>
           </div>
           <div className="w-full mt-10 overflow-hidden min-h-[50px]">

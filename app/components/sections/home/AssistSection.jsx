@@ -42,7 +42,7 @@ export default function AssistSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="w-[75%] mx-auto py-12 flex flex-col justify-center">
           <div className="mb-8">
-            <h2 className="text-[3rem] font-display leading-[4rem] text-black">What brings you here today?</h2>
+            <h2 className="text-[3rem] leading-[4rem] text-black">What brings you here today?</h2>
           </div>
           <div className="relative">
             <select
@@ -70,7 +70,7 @@ export default function AssistSection() {
           style={{ backgroundImage: `url('${assistData[assistKey].img}')` }}
         >
           <div className="bg-white/70 backdrop-blur-[20px] p-4 md:p-[25px] md:p-10 rounded-[25px] w-full md:w-4/5">
-            <h3 className="mb-4 font-display text-[28px] text-black">{assistData[assistKey].title}</h3>
+            <h3 className="mb-4 text-[28px] text-black">{assistData[assistKey].title}</h3>
             <p className="mb-5 text-sm text-black">{assistData[assistKey].desc}</p>
             <div className="flex gap-2 flex-wrap">
               <Button href="#" variant="primary" size="sm">

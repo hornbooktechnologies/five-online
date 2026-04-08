@@ -10,7 +10,7 @@ export default function CaseStudiesPage() {
   return (
     <ListingScene
       assetBasePath="/figma/case-studies"
-      title={"Revenue Systems Engineered.\nNot Just Websites Designed."}
+      title={"Revenue Systems Engineered. <br /> Not Just Websites Designed."}
       titleWidth={1368}
       subtitle="Strategic case studies across D2C, enterprise and growth-driven brands."
       filterGroups={[
