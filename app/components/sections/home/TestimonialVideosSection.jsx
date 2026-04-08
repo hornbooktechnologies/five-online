@@ -47,17 +47,17 @@ export default function TestimonialVideosSection() {
             {isMounted && (
               <Slider {...settings} key={`testimonial-slider-${slidesToShow}`}>
                 <div className="px-3 outline-none">
-                  <a className="block overflow-hidden rounded-xl" href="https://www.youtube.com/embed/LOZ_JA8RPyY?rel=0" target="_blank" rel="noopener noreferrer">
+                  <a className="block overflow-hidden rounded-xl" href="https://www.youtube.com/embed/LOZ_JA8RPyY?rel=0" target="_blank" >
                     <img src="/images/youtube1.webp" className="w-full h-auto mb-3 hover:scale-105 transition-transform duration-300" alt="Testimonial 1" />
                   </a>
                 </div>
                 <div className="px-3 outline-none">
-                  <a className="block overflow-hidden rounded-xl" href="https://www.youtube.com/embed/4npzSxlU6nI?rel=0" target="_blank" rel="noopener noreferrer">
+                  <a className="block overflow-hidden rounded-xl" href="https://www.youtube.com/embed/4npzSxlU6nI?rel=0" target="_blank" >
                     <img src="/images/youtube2.webp" className="w-full h-auto mb-3 hover:scale-105 transition-transform duration-300" alt="Testimonial 2" />
                   </a>
                 </div>
                 <div className="px-3 outline-none">
-                  <a className="block overflow-hidden rounded-xl" href="https://www.youtube.com/embed/aipV7u2Da3s?si=YRasukfYzTvlmjVn?rel=0" target="_blank" rel="noopener noreferrer">
+                  <a className="block overflow-hidden rounded-xl" href="https://www.youtube.com/embed/aipV7u2Da3s?si=YRasukfYzTvlmjVn?rel=0" target="_blank" >
                     <img src="/images/youtube3.webp" className="w-full h-auto mb-3 hover:scale-105 transition-transform duration-300" alt="Testimonial 3" />
                   </a>
                 </div>

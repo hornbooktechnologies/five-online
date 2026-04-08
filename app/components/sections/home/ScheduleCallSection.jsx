@@ -43,7 +43,7 @@ export default function ScheduleCallSection() {
                 <li>Clear next step recommendation</li>
               </ul>
               <div>
-                <Button href="#" variant="primary" size="md">
+                <Button href="/contact#contact-form-panel" variant="primary" size="md">
                   Book Strategy Call
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Button>
