@@ -19,15 +19,15 @@ export default function Footer() {
 
   return (
     // Figma: no explicit bg rectangle on footer area — white bg with black text
-    <footer className='bg-white border-t border-[#d7d7d7]'>
-      <Container className='!px-0 !py-[48px]'>
+    <footer className='bg-white'>
+      <Container className='!px-0 !pb-12 !pt-0'>
         {/* Desktop View — Poppins 400 14px #000, green dots #6abd45 10×10px */}
         <div className='hidden md:flex flex-wrap justify-center items-center gap-y-3'>
           {serviceLinks.map((link, i) => (
             <span key={link.label} className='flex items-center'>
               <Link
                 href={link.href}
-                className='font-body text-black hover:text-zinc-600 transition-colors whitespace-nowrap px-3'
+                className='text-black hover:text-zinc-600 transition-colors whitespace-nowrap px-3'
                 style={{
                   fontSize: "14px",
                   lineHeight: "21px",
@@ -68,7 +68,7 @@ export default function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className='font-body text-black text-center px-4 transition-colors'
+                    className='text-black text-center px-4 transition-colors'
                     style={{ fontSize: "14px", lineHeight: "1.5" }}
                   >
                     {link.label}
@@ -84,7 +84,7 @@ export default function Footer() {
 
         {/* Copyright — Figma: Poppins 300 14px #000000, centered */}
         <p
-          className='font-body text-center text-black px-4'
+          className='text-center text-black px-4'
           style={{
             fontSize: "14px",
             lineHeight: "21px",

@@ -37,7 +37,7 @@ const notForPills = [
 
 function HighlightChip({ children }) {
   return (
-    <div className="inline-flex max-w-full items-center justify-center border border-[#6abd45] bg-[#eaffdf] px-5 py-2 text-center font-sans text-[15px] font-medium leading-6 text-black sm:text-[16px]">
+    <div className="inline-flex max-w-full items-center justify-center border border-[#6abd45] bg-[#eaffdf] px-5 py-2 text-center text-[15px] font-medium leading-6 text-black sm:text-[16px]">
       {children}
     </div>
   );
@@ -46,7 +46,7 @@ function HighlightChip({ children }) {
 function FieldError({ message }) {
   if (!message) return null;
 
-  return <p className="mt-2 font-sans text-[13px] text-[#d92d20]">{message}</p>;
+  return <p className="mt-2 text-[13px] text-[#d92d20]">{message}</p>;
 }
 
 export default function ContactScene() {
@@ -132,14 +132,14 @@ export default function ContactScene() {
 
   return (
     <main className="bg-white text-black">
-      <section className="mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-6 lg:py-20">
+      <section className="mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12">
         <div className="mx-auto max-w-[1080px] text-center">
           <h1 className="font-display text-[48px] leading-[0.96] text-black sm:text-[68px] lg:text-[96px] lg:leading-[100px]">
             Build Revenue Engine.
             <br />
             Not Just Websites.
           </h1>
-          <p className="mx-auto mt-8 max-w-[640px] font-sans text-[18px] leading-[28px] text-black">
+          <p className="mx-auto mt-8 max-w-[640px] text-[18px] leading-[28px] text-black">
             We partner with serious brands who see their website as a revenue
             engine, not a design expense.
           </p>
@@ -157,7 +157,7 @@ export default function ContactScene() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-6 lg:py-20">
+      <section className="mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12">
         <h2 className="text-center font-display text-[42px] leading-[1.1] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]">
           Who We&apos;re Best Suited For
         </h2>
@@ -179,10 +179,10 @@ export default function ContactScene() {
                 />
               </div>
 
-              <h3 className="mt-12 font-sans text-[20px] font-semibold leading-[28px] text-black">
+              <h3 className="mt-12 text-[20px] font-semibold leading-[28px] text-black">
                 {card.title}
               </h3>
-              <p className="mt-5 font-sans text-[16px] leading-[24px] text-black">
+              <p className="mt-5 text-[16px] leading-[24px] text-black">
                 {card.body}
               </p>
             </article>
@@ -190,7 +190,7 @@ export default function ContactScene() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-6 lg:py-20">
+      <section className="mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-12">
         <h2 className="font-display text-[42px] leading-[1.1] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]">
           Who We&apos;re Not For
         </h2>
@@ -199,7 +199,7 @@ export default function ContactScene() {
           {notForPills.map((label) => (
             <div
               key={label}
-              className="rounded-full border border-[#dddddd] bg-white px-5 py-3 font-body text-[17px] leading-[27px] text-black"
+              className="rounded-full border border-[#dddddd] bg-white px-5 py-3 text-[17px] leading-[27px] text-black"
             >
               {label}
             </div>
@@ -211,7 +211,7 @@ export default function ContactScene() {
         </div>
       </section>
 
-      <section className="bg-[#f8f8f8] px-6 lg:px-[60px] py-6 lg:py-20">
+      <section className="bg-[#f8f8f8] px-6 lg:px-[60px] py-12 mb-12">
         <div className="mx-auto grid grid-cols-1 md:grid-cols-2 w-full max-w-[1440px] gap-10">
           <div className="self-center">
             <div className="bg-white">
@@ -225,18 +225,18 @@ export default function ContactScene() {
                 />
               </div>
               <div className="space-y-4 px-8 py-8">
-                <h3 className="font-sans text-[20px] font-semibold leading-none text-black">
+                <h3 className="text-[20px] font-semibold leading-none text-black">
                   Mumbai
                 </h3>
                 <a
                   href="tel:+919876543210"
-                  className="block font-sans text-[18px] leading-[30px] text-black"
+                  className="block text-[18px] leading-[30px] text-black"
                 >
                   +91 9876543210
                 </a>
                 <a
                   href="mailto:contact@fiveonline.in"
-                  className="block font-sans text-[18px] leading-[30px] text-black"
+                  className="block text-[18px] leading-[30px] text-black"
                 >
                   contact@fiveonline.in
                 </a>
@@ -251,7 +251,7 @@ export default function ContactScene() {
           >
             <div className="space-y-6">
               <div>
-                <label className="mb-3 block font-sans text-[18px] leading-none text-black">
+                <label className="mb-3 block text-[18px] leading-none text-black">
                   Name <span className="text-[#ff3b30]">*</span>
                 </label>
                 <input
@@ -260,13 +260,13 @@ export default function ContactScene() {
                   value={form.name}
                   onChange={updateField("name")}
                   aria-invalid={Boolean(errors.name)}
-                  className="h-[54px] w-full border border-black bg-white px-4 font-sans text-[18px] text-black outline-none"
+                  className="h-[54px] w-full border border-black bg-white px-4 text-[18px] text-black outline-none"
                 />
                 <FieldError message={errors.name} />
               </div>
 
               <div>
-                <label className="mb-3 block font-sans text-[18px] leading-none text-black">
+                <label className="mb-3 block text-[18px] leading-none text-black">
                   WhatsApp Number <span className="text-[#ff3b30]">*</span>
                 </label>
                 <input
@@ -275,13 +275,13 @@ export default function ContactScene() {
                   value={form.whatsapp}
                   onChange={updateField("whatsapp")}
                   aria-invalid={Boolean(errors.whatsapp)}
-                  className="h-[54px] w-full border border-black bg-white px-4 font-sans text-[18px] text-black outline-none"
+                  className="h-[54px] w-full border border-black bg-white px-4 text-[18px] text-black outline-none"
                 />
                 <FieldError message={errors.whatsapp} />
               </div>
 
               <div>
-                <label className="mb-3 block font-sans text-[18px] leading-none text-black">
+                <label className="mb-3 block text-[18px] leading-none text-black">
                   Email <span className="text-[#ff3b30]">*</span>
                 </label>
                 <input
@@ -290,21 +290,21 @@ export default function ContactScene() {
                   value={form.email}
                   onChange={updateField("email")}
                   aria-invalid={Boolean(errors.email)}
-                  className="h-[54px] w-full border border-black bg-white px-4 font-sans text-[18px] text-black outline-none"
+                  className="h-[54px] w-full border border-black bg-white px-4 text-[18px] text-black outline-none"
                 />
                 <FieldError message={errors.email} />
               </div>
 
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
-                  <label className="mb-3 block font-sans text-[16px] leading-none text-black">
+                  <label className="mb-3 block text-[16px] leading-none text-black">
                     Budget Range
                   </label>
                   <select
                     name="budget"
                     value={form.budget}
                     onChange={updateField("budget")}
-                    className="h-[50px] w-full border border-black bg-white px-4 font-sans text-[18px] text-black outline-none"
+                    className="h-[50px] w-full border border-black bg-white px-4 text-[18px] text-black outline-none"
                   >
                     <option value="">-None-</option>
                     <option>Rs1L - Rs3L</option>
@@ -315,14 +315,14 @@ export default function ContactScene() {
                 </div>
 
                 <div>
-                  <label className="mb-3 block font-sans text-[16px] leading-none text-black">
+                  <label className="mb-3 block text-[16px] leading-none text-black">
                     Project Start Date
                   </label>
                   <select
                     name="startDate"
                     value={form.startDate}
                     onChange={updateField("startDate")}
-                    className="h-[50px] w-full border border-black bg-white px-4 font-sans text-[18px] text-black outline-none"
+                    className="h-[50px] w-full border border-black bg-white px-4 text-[18px] text-black outline-none"
                   >
                     <option value="">-None-</option>
                     <option>Immediately</option>
@@ -334,7 +334,7 @@ export default function ContactScene() {
               </div>
 
               <div>
-                <label className="mb-3 block font-sans text-[18px] leading-none text-black">
+                <label className="mb-3 block text-[18px] leading-none text-black">
                   Product / Brand Idea
                 </label>
                 <textarea
@@ -342,7 +342,7 @@ export default function ContactScene() {
                   rows={4}
                   value={form.idea}
                   onChange={updateField("idea")}
-                  className="min-h-[110px] w-full resize-y border border-black bg-white px-4 py-3 font-sans text-[18px] text-black outline-none"
+                  className="min-h-[110px] w-full resize-y border border-black bg-white px-4 py-3 text-[18px] text-black outline-none"
                 />
               </div>
 
@@ -360,7 +360,7 @@ export default function ContactScene() {
               </Button>
 
               <div className="mt-6 bg-[#eaffdf] px-5 py-3">
-                <p className="font-sans text-[15px] leading-[22px] text-black">
+                <p className="text-[15px] leading-[22px] text-black">
                   {submitted
                     ? "Application received. We review every application personally and follow up if aligned."
                     : "We review every application personally. If aligned, we schedule a strategic call."}

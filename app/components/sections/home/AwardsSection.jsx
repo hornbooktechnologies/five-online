@@ -7,7 +7,7 @@ export default function AwardsSection() {
 
   return (
     <>
-      <div className="mb-20 relative" id="section08">
+      <div className="my-12 relative" id="section08">
         <div className="flex flex-wrap lg:flex-nowrap">
           <div className="w-full lg:w-5/12 relative">
             <div className="w-full h-full">
@@ -32,15 +32,15 @@ export default function AwardsSection() {
             <div className="p-12 lg:p-20 relative z-10 w-full md:!pl-[150px]">
               <div className="space-y-0">
                 <div className="py-6">
-                  <p className="text-black font-sans font-bold text-lg uppercase tracking-wide">AWARDED AS BEST WEB DESIGN AGENCY IN MUMBAI 2022 BY LEA</p>
+                  <p className="text-black font-bold text-lg uppercase tracking-wide">AWARDED AS BEST WEB DESIGN AGENCY IN MUMBAI 2022 BY LEA</p>
                   <div className="w-[100px] h-[3px] bg-green-500 mt-6"></div>
                 </div>
                 <div className="py-6">
-                  <p className="text-black font-sans font-bold text-lg uppercase tracking-wide">RANKED AS BEST WEB DESIGN COMPANY IN MUMBAI BY HINDUSTAN TIMES</p>
+                  <p className="text-black font-bold text-lg uppercase tracking-wide">RANKED AS BEST WEB DESIGN COMPANY IN MUMBAI BY HINDUSTAN TIMES</p>
                   <div className="w-[100px] h-[3px] bg-green-500 mt-6"></div>
                 </div>
                 <div className="py-6">
-                  <p className="text-black font-sans font-bold text-lg uppercase tracking-wide">RANKED IN TOP 5 WEB DESIGN COMPANY IN MUMBAI BY YOUR STORY</p>
+                  <p className="text-black font-bold text-lg uppercase tracking-wide">RANKED IN TOP 5 WEB DESIGN COMPANY IN MUMBAI BY YOUR STORY</p>
                   <div className="w-[100px] h-[3px] bg-green-500 mt-6"></div>
                 </div>
               </div>

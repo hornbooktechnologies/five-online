@@ -38,7 +38,7 @@ export default function AssistSection() {
   };
 
   return (
-    <section className="p-0 mt-20 mb-20 bg-[#f3f3f3]">
+    <section className="p-0 mt-12 mb-12 bg-[#f3f3f3]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="w-[75%] mx-auto py-12 flex flex-col justify-center">
           <div className="mb-8">
@@ -47,7 +47,7 @@ export default function AssistSection() {
           <div className="relative">
             <select
               id="capabilities"
-              className="w-full py-4 pl-5 pr-12 rounded-none border-0 border-b border-[#888] bg-white text-base cursor-pointer focus:outline-none font-sans appearance-none"
+              className="w-full py-4 pl-5 pr-12 rounded-none border-0 border-b border-[#888] bg-white text-base cursor-pointer focus:outline-none appearance-none"
               value={assistKey}
               onChange={(e) => setAssistKey(e.target.value)}
             >
@@ -71,12 +71,12 @@ export default function AssistSection() {
         >
           <div className="bg-white/70 backdrop-blur-[20px] p-4 md:p-[25px] md:p-10 rounded-[25px] w-full md:w-4/5">
             <h3 className="mb-4 font-display text-[28px] text-black">{assistData[assistKey].title}</h3>
-            <p className="mb-5 text-sm font-sans text-black">{assistData[assistKey].desc}</p>
+            <p className="mb-5 text-sm text-black">{assistData[assistKey].desc}</p>
             <div className="flex gap-2 flex-wrap">
               <Button href="#" variant="primary" size="sm">
                 Explore Capabilities
               </Button>
-              <Button href="#" variant="primary" size="sm">
+              <Button href="/contact#contact-form-panel" variant="primary" size="sm">
                 Book a Strategy Call
               </Button>
             </div>

@@ -36,12 +36,12 @@ export default function TestimonialVideosSection() {
   };
 
   return (
-    <section className="px-6 lg:px-[60px] py-16 lg:py-24">
+    <section className="px-6 lg:px-[60px] py-12">
       <div className="w-full">
-        <div className="flex flex-wrap text-center mb-10">
+        <div className="flex flex-wrap text-center">
           <div className="w-full">
             <h2 className="text-[3.375rem] font-display leading-[4rem] text-black mb-3">Real Words. Real Wins.</h2>
-            <p className="font-sans text-base text-[#212529]">These stories reveal why brands choose Five Online</p>
+            <p className="text-base text-[#212529]">These stories reveal why brands choose Five Online</p>
           </div>
           <div className="w-full mt-10">
             {isMounted && (

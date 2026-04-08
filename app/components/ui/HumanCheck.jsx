@@ -50,19 +50,18 @@ export default function HumanCheck({ value, onChange, error }) {
       <div className="border border-[#d9d9d9] bg-white px-4 py-3">
         <div className="flex min-h-[48px] items-center gap-4">
           <div
-            className={`flex h-[28px] w-[28px] items-center justify-center border ${
-              value ? "border-black bg-black text-white" : "border-black bg-white text-transparent"
-            }`}
+            className={`flex h-[28px] w-[28px] items-center justify-center border ${value ? "border-black bg-black text-white" : "border-black bg-white text-transparent"
+              }`}
             aria-hidden="true"
           >
             <span className="text-[18px] leading-none">✓</span>
           </div>
 
           <div className="min-w-0">
-            <p className="font-sans text-[16px] text-black">
+            <p className="text-[16px] text-black">
               {value ? "Verification complete" : "I'm not a robot"}
             </p>
-            <p className="font-sans text-[11px] text-[#7a7a7a]">
+            <p className="text-[11px] text-[#7a7a7a]">
               {value ? "Human verification passed" : "Solve the prompt to continue"}
             </p>
           </div>
@@ -72,13 +71,13 @@ export default function HumanCheck({ value, onChange, error }) {
               <button
                 type="button"
                 onClick={resetChallenge}
-                className="h-[34px] rounded-[4px] border border-black px-3 font-sans text-[12px] text-black"
+                className="h-[34px] rounded-[4px] border border-black px-3 text-[12px] text-black"
               >
                 Reset
               </button>
             ) : challenge ? (
               <>
-                <span className="font-sans text-[13px] whitespace-nowrap text-black">
+                <span className="text-[13px] whitespace-nowrap text-black">
                   {challenge.left} + {challenge.right} =
                 </span>
                 <input
@@ -92,13 +91,13 @@ export default function HumanCheck({ value, onChange, error }) {
                       verify();
                     }
                   }}
-                  className="h-[34px] w-[44px] border border-black bg-white px-2 text-center font-sans text-[14px] text-black outline-none"
+                  className="h-[34px] w-[44px] border border-black bg-white px-2 text-center text-[14px] text-black outline-none"
                   aria-label="Human verification answer"
                 />
                 <button
                   type="button"
                   onClick={verify}
-                  className="h-[34px] rounded-[4px] bg-black px-3 font-sans text-[12px] text-white"
+                  className="h-[34px] rounded-[4px] bg-black px-3 text-[12px] text-white"
                 >
                   Verify
                 </button>
@@ -110,7 +109,7 @@ export default function HumanCheck({ value, onChange, error }) {
         </div>
       </div>
       {displayError ? (
-        <p className="mt-2 font-sans text-[13px] text-[#d92d20]">{displayError}</p>
+        <p className="mt-2 text-[13px] text-[#d92d20]">{displayError}</p>
       ) : null}
     </>
   );

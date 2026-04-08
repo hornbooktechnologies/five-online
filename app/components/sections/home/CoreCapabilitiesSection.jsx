@@ -12,7 +12,7 @@ export default function CoreCapabilitiesSection() {
   ];
 
   return (
-    <section className="px-6 lg:px-[60px] py-16 lg:py-24">
+    <section className="px-6 lg:px-[60px] py-12">
       <div className="max-w-[1320px] mx-auto">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4 text-center mb-4">
@@ -28,7 +28,7 @@ export default function CoreCapabilitiesSection() {
                 </div>
                 <div className="absolute bottom-5 left-5 w-[90%] text-left z-10">
                   <h4 className="text-2xl text-white font-display mb-4">{cap.title}</h4>
-                  <p className="text-base text-white font-sans leading-6">{cap.desc}</p>
+                  <p className="text-base text-white leading-6">{cap.desc}</p>
                 </div>
               </div>
             </div>

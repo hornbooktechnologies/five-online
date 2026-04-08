@@ -5,7 +5,7 @@ import Button from '../../common/Button';
 
 export default function ScheduleCallSection() {
   return (
-    <section className="px-6 lg:px-[60px] py-16 lg:py-24" id="book-call">
+    <section className="px-6 lg:px-[60px] py-12" id="book-call">
       <div className="max-w-[1140px] mx-auto">
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 bg-black rounded-[15px] px-2 py-4'>
           <div className='flex flex-col gap-3'>

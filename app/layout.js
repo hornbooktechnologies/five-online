@@ -1,4 +1,3 @@
-import { Poppins } from "next/font/google";
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,14 +5,6 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import WhatsAppButton from "./components/common/WhatsAppButton";
 import AosInit from "./components/common/AosInit";
-
-// Poppins — UI, nav, buttons, body copy (matches Figma exactly)
-const poppins = Poppins({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-// Reckless Neue & Season Sans are loaded via @font-face in globals.css
 
 export const metadata = {
   title: {
@@ -28,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${poppins.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <head>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />

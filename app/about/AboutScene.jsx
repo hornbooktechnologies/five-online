@@ -97,7 +97,7 @@ function getSlidesToShowForWidth(width) {
 
 function HighlightChip({ children }) {
   return (
-    <div className='inline-flex max-w-full items-center justify-center border border-[#6abd45] bg-[#eaffdf] px-5 py-2 text-center font-sans text-[15px] font-medium leading-6 text-black sm:text-[16px]'>
+    <div className='inline-flex max-w-full items-center justify-center border border-[#6abd45] bg-[#eaffdf] px-5 py-2 text-center text-[15px] font-medium leading-6 text-black sm:text-[16px]'>
       {children}
     </div>
   );
@@ -111,7 +111,7 @@ function FaqItem({ faq, open, onToggle }) {
         onClick={onToggle}
         className='flex w-full items-start gap-6 py-6 text-left cursor-pointer'
       >
-        <span className='flex-1 font-body text-[18px] font-medium leading-[30px] text-black sm:text-[20px]'>
+        <span className='flex-1 text-[18px] font-medium leading-[30px] text-black sm:text-[20px]'>
           {faq.question}
         </span>
         <span className='flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black text-[20px] leading-none bg-black text-white'>
@@ -120,7 +120,7 @@ function FaqItem({ faq, open, onToggle }) {
       </button>
 
       {open ? (
-        <p className='pb-6 pr-12 font-body text-[16px] leading-[28px] text-black'>
+        <p className='pb-6 pr-12 text-[16px] leading-[28px] text-black'>
           {faq.answer}
         </p>
       ) : null}
@@ -145,18 +145,18 @@ export default function AboutScene() {
 
   return (
     <main className='bg-white text-black'>
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-6 lg:py-20'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='mx-auto max-w-[1120px] text-center'>
           <h1 className='font-display text-[48px] leading-[0.96] text-black sm:text-[68px] lg:text-[96px] lg:leading-[100px]'>
             India&apos;s Revenue-First Web Design Company
           </h1>
 
-          <p className='mx-auto mt-8 max-w-[760px] font-sans text-[18px] leading-[28px] text-black'>
+          <p className='mx-auto mt-8 max-w-[760px] text-[18px] leading-[28px] text-black'>
             We design and build high-performance websites that directly
             contribute to business growth.
           </p>
 
-          <div className='mx-auto mt-6 max-w-[820px] space-y-1 font-sans text-[20px] leading-[32px] text-black sm:text-[22px] sm:leading-[34px] lg:text-[24px] lg:leading-[36px]'>
+          <div className='mx-auto mt-6 max-w-[820px] space-y-1 text-[20px] leading-[32px] text-black sm:text-[22px] sm:leading-[34px] lg:text-[24px] lg:leading-[36px]'>
             <p>Built in India. Trusted globally.</p>
             <p>
               20+ years of experience across enterprises, D2C brands and agency
@@ -169,7 +169,7 @@ export default function AboutScene() {
               Explore Case Studies
               <ArrowRightIcon />
             </Button>
-            <Button href="/contact" variant="secondary" size="md">
+            <Button href="/contact#contact-form-panel" variant="secondary" size="md">
               Book a Strategy Call
               <ArrowRightIcon color="black" />
             </Button>
@@ -178,13 +178,13 @@ export default function AboutScene() {
       </section>
 
       <section className='bg-[#f8f8f8]'>
-        <div className='mx-auto grid w-full max-w-[1440px] gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center px-6 lg:px-[60px] py-16 lg:py-24'>
+        <div className='mx-auto grid w-full max-w-[1440px] gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center px-6 lg:px-[60px] py-12'>
           <div>
             <h2 className='max-w-[660px] whitespace-pre-line font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
               {"We Don't Build Websites.\nWe Engineer Growth Systems."}
             </h2>
 
-            <div className='mt-10 space-y-4 font-sans text-[18px] leading-[30px] text-black'>
+            <div className='mt-10 space-y-4 text-[18px] leading-[30px] text-black'>
               <div className='flex items-start gap-3'>
                 <Image
                   src='/figma/about/icon-x-circle.svg'
@@ -207,15 +207,15 @@ export default function AboutScene() {
               </div>
             </div>
 
-            <p className='mt-8 font-body text-[16px] leading-[32px] text-black'>
+            <p className='mt-8 text-[16px] leading-[32px] text-black'>
               Every engagement begins with one question:
             </p>
 
             <div className='mt-4 bg-[#e6ffd9] px-6 py-7'>
-              <h3 className='font-sans text-[20px] font-semibold leading-[32px] text-black'>
+              <h3 className='text-[20px] font-semibold leading-[32px] text-black'>
                 How will this website contribute to measurable revenue growth?
               </h3>
-              <p className='mt-2 font-sans text-[16px] leading-[30px] text-black'>
+              <p className='mt-2 text-[16px] leading-[30px] text-black'>
                 Our model is consultant-led, structured and
                 performance-oriented. We don&apos;t execute briefs. We challenge
                 assumptions.
@@ -236,12 +236,12 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='mx-auto max-w-[1120px] text-center'>
           <h2 className='font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
             Our Revenue Philosophy
           </h2>
-          <div className='mt-8 space-y-1 font-sans text-[18px] leading-[28px] text-black'>
+          <div className='mt-8 space-y-1 text-[18px] leading-[28px] text-black'>
             <p>Design without strategy is decoration.</p>
             <p>Technology without performance tracking is risk.</p>
           </div>
@@ -260,7 +260,7 @@ export default function AboutScene() {
                 height={60}
                 className='h-[60px] w-[60px]'
               />
-              <h3 className='mt-auto pt-14 font-body text-[20px] font-semibold leading-[30px] text-black'>
+              <h3 className='mt-auto pt-14 text-[20px] font-semibold leading-[30px] text-black'>
                 {card.title}
               </h3>
             </article>
@@ -274,7 +274,7 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='mx-auto w-full py-16 lg:py-24'>
+      <section className='mx-auto w-full py-12'>
         <div className='w-full max-w-[1440px] grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start px-6 lg:px-[60px]'>
           <div>
             <h2 className='max-w-[620px] whitespace-pre-line font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
@@ -283,7 +283,7 @@ export default function AboutScene() {
           </div>
 
           <div>
-            <p className='max-w-[620px] font-sans text-[16px] leading-[30px] text-black'>
+            <p className='max-w-[620px] text-[16px] leading-[30px] text-black'>
               Over 20+ years, we have delivered 500+ projects across 25+
               industries, continuously adapting to algorithm shifts, platform
               changes and evolving buyer behavior.
@@ -320,7 +320,7 @@ export default function AboutScene() {
                       sizes='(min-width: 1280px) 19vw, (min-width: 640px) 50vw, 100vw'
                     />
                   </div>
-                  <h3 className='mt-4 font-sans text-[18px] font-semibold leading-[30px] text-black'>
+                  <h3 className='mt-4 text-[18px] font-semibold leading-[30px] text-black'>
                     {tile.label}
                   </h3>
                 </article>
@@ -330,7 +330,7 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='relative isolate overflow-hidden bg-black text-white'>
+      <section className='relative isolate overflow-hidden bg-black text-white my-12'>
         <Image
           src='/figma/about/founder-background.jpg'
           alt=''
@@ -349,7 +349,7 @@ export default function AboutScene() {
                 Nayan Khandor
               </h3>
               <div className='mt-6 border-l border-[#6ABD45] pl-6'>
-                <p className='font-sans text-[18px] leading-[28px] text-white'>
+                <p className='text-[18px] leading-[28px] text-white'>
                   Five Online is led by Nayan Khandor, CEO and Growth
                   Strategist. He believes Web design should sit inside the
                   revenue conversation — not outside it.
@@ -380,12 +380,12 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='mx-auto max-w-[1120px] text-center'>
           <h2 className='font-display text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
             A Structured Growth Team
           </h2>
-          <div className='mt-8 space-y-1 font-sans text-[18px] leading-[28px] text-black'>
+          <div className='mt-8 space-y-1 text-[18px] leading-[28px] text-black'>
             <p>We are not a design studio.</p>
             <p>We operate through focused capability pods:</p>
           </div>
@@ -405,7 +405,7 @@ export default function AboutScene() {
                 height={60}
                 className='h-[56px] w-auto shrink-0 object-contain'
               />
-              <h3 className='font-body text-[20px] font-medium leading-[28px] text-black'>
+              <h3 className='text-[20px] font-medium leading-[28px] text-black'>
                 {pill.title}
               </h3>
             </article>
@@ -413,31 +413,30 @@ export default function AboutScene() {
         </div>
       </section>
 
-
       <section className='relative overflow-hidden bg-[#f8f8f8]'>
         <img
           src='/figma/about/trust-decoration.png'
           className="absolute right-[-160px] top-0 object-cover object-left h-full"
         />
 
-        <div className='relative mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-16 lg:py-24'>
+        <div className='relative mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-12'>
           <h2 className='font-display text-[52px] leading-[0.98] text-black sm:text-[72px] lg:text-[96px] lg:leading-[100px]'>
             <span className='block'>Built in India.</span>
             <span className='block'>Trusted Globally.</span>
           </h2>
 
-          <div className='mx-auto mt-10 max-w-[560px] space-y-1 font-sans text-[20px] leading-[32px] text-black sm:text-[22px] sm:leading-[34px] lg:text-[24px] lg:leading-[36px]'>
+          <div className='mx-auto mt-10 max-w-[560px] space-y-1 text-[20px] leading-[32px] text-black sm:text-[22px] sm:leading-[34px] lg:text-[24px] lg:leading-[36px]'>
             <p>India gives us engineering depth.</p>
             <p>Global exposure gives us perspective.</p>
           </div>
 
-          <p className='mx-auto mt-8 max-w-[820px] font-sans text-[18px] leading-[28px] text-black'>
+          <p className='mx-auto mt-8 max-w-[820px] text-[18px] leading-[28px] text-black'>
             We combine strategic thinking with execution efficiency, delivering
             enterprise-level thinking with long-term partnership models.
           </p>
 
           <div className='mt-10'>
-            <Button href="/contact" variant="primary" size="md">
+            <Button href="/contact#contact-form-panel" variant="primary" size="md">
               Book A Call
               <ArrowRightIcon />
             </Button>
@@ -445,14 +444,14 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='grid gap-10 lg:grid-cols-[320px_minmax(0,1fr)]'>
           <div>
-            <h2 className='font-body text-[40px] font-bold leading-[1.2] text-black sm:text-[48px]'>
+            <h2 className='text-[40px] font-bold leading-[1.2] text-black sm:text-[48px]'>
               The Answer Stack
               <span className='align-top text-[0.42em]'>TM</span>
             </h2>
-            <p className='mt-6 max-w-[340px] font-body text-[18px] leading-[30px] text-black'>
+            <p className='mt-6 max-w-[340px] text-[18px] leading-[30px] text-black'>
               Structured answers that remove doubt and improve conversion
               clarity.
             </p>
@@ -473,7 +472,7 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='relative isolate overflow-hidden bg-black text-white'>
+      <section className='relative isolate overflow-hidden bg-black text-white my-12'>
         <Image
           src='/figma/case-studies/cta-bg.png'
           alt=''
@@ -488,7 +487,7 @@ export default function AboutScene() {
             Schedule a 30-minute call with CEO to see if we are a good match.
           </h2>
 
-          <Button href="/contact" variant="outline" size="md">
+          <Button href="/contact#contact-form-panel" variant="outline" size="md">
             Book a Strategy Call
             <ArrowRightIcon />
           </Button>

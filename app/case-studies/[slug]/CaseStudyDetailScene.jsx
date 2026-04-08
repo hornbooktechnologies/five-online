@@ -18,7 +18,7 @@ const aiSummaryIcons = [
 const garwareContent = {
   eyebrow: "Digital Platform Transformation\nFor Enterprise Growth",
   heroTitle: "Garware Hi-Tech Films",
-  heroImage: "/figma/case-study-detail/mac-studio.png",
+  heroImage: "/figma/case-study-detail/mac-studio-img.png",
   heroUsesFrameAsset: true,
   stats: [
     { value: "+38%", label: "product page engagement" },
@@ -173,12 +173,12 @@ function getSceneContent(cs) {
 
 function StatStrip({ stats }) {
   return (
-    <div className='relative overflow-hidden bg-[#0d0d0d]'>
+    <div className='relative overflow-hidden'>
       <Image
-        src='/figma/case-study-detail/stats-bg.png'
+        src='/figma/case-study-detail/stats-background.png'
         alt=''
         fill
-        className='object-cover opacity-80'
+        className='object-cover'
         sizes='1320px'
       />
       <div className='relative grid grid-cols-1 gap-6 px-6 py-6 sm:px-8 lg:grid-cols-3 lg:px-[112px]'>
@@ -190,7 +190,7 @@ function StatStrip({ stats }) {
             <p className='font-display text-[30px] leading-[30px] text-[#6abd45] sm:text-[36px] sm:leading-[36px]'>
               {stat.value}
             </p>
-            <p className='font-sans text-[18px] capitalize leading-[28px] text-white sm:text-[20px] sm:leading-[30px]'>
+            <p className='text-[18px] capitalize leading-[28px] text-white sm:text-[20px] sm:leading-[30px]'>
               {stat.label}
             </p>
           </div>
@@ -202,7 +202,7 @@ function StatStrip({ stats }) {
 
 function TagPill({ label }) {
   return (
-    <span className='inline-flex items-center rounded-[20px] bg-[#f0f6ed] px-4 py-2 font-sans text-[14px] leading-none text-[#0d0d0d]'>
+    <span className='inline-flex items-center rounded-[20px] bg-[#f0f6ed] px-4 py-2 text-[14px] leading-none text-[#0d0d0d]'>
       {label}
     </span>
   );
@@ -216,7 +216,7 @@ function StrategyCard({ title, body, className = "" }) {
       <h3 className='font-display text-[22px] leading-[32px] text-black sm:text-[24px] sm:leading-[36px]'>
         {title}
       </h3>
-      <p className='font-sans text-[16px] leading-[28px] text-[#333] sm:leading-[30px]'>
+      <p className='text-[16px] leading-[28px] text-[#333] sm:leading-[30px]'>
         {body}
       </p>
     </article>
@@ -228,11 +228,9 @@ export default function CaseStudyDetailScene({ cs }) {
 
   return (
     <main className='bg-[#fbfffa]'>
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] pt-6 lg:pt-20'>
-        <div className='grid lg:grid-cols-[480px_minmax(0,783px)] lg:items-center'>
-          <div className='relative h-full flex flex-col justify-evenly overflow-hidden mt-0 lg:mt-[50px] gap-10 lg:gap-0'>
-            {/* Decorative SVG from Figma is served directly to avoid format/optimization issues. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] pt-12'>
+        <div className='grid lg:grid-cols-[480px_minmax(0,783px)] lg:items-center gap-5 lg:gap-0'>
+          <div className='relative h-full flex flex-col justify-evenly mt-0 lg:mt-[70px] gap-10 lg:gap-0'>
             <img
               src='/figma/case-study-detail/hero-scribble-top.svg'
               alt=''
@@ -240,26 +238,24 @@ export default function CaseStudyDetailScene({ cs }) {
               className='absolute left-[270px] top-[80px] hidden lg:block'
               style={{ width: 299, height: 39 }}
             />
-            {/* Decorative SVG from Figma is served directly to avoid format/optimization issues. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src='/figma/case-study-detail/hero-scribble-bottom.svg'
+              src='/figma/case-study-detail/hero-scribble-bottom-1.svg'
               alt=''
               aria-hidden='true'
-              className='absolute left-[-130px] top-[310px] hidden lg:block rotate-180'
+              className='absolute left-[-130px] top-[310px] hidden lg:block'
               style={{ width: 269, height: 39 }}
             />
             <div>
               <h1 className='font-display text-[40px] leading-[1.08] text-black sm:text-[48px] sm:leading-[64px]'>
                 {content.heroTitle}
               </h1>
-              <p className='mt-6 whitespace-pre-line font-sans text-[18px] leading-[28px] text-[#666] sm:text-[20px] sm:leading-[30px]'>
+              <p className='mt-6 whitespace-pre-line text-[18px] leading-[28px] text-[#666] sm:text-[20px] sm:leading-[30px]'>
                 {content.eyebrow}
               </p>
             </div>
 
             <div className=''>
-              <p className='font-sans text-[20px] leading-[30px] text-black'>
+              <p className='text-[20px] leading-[30px] text-black'>
                 Tools
               </p>
               <div className='mt-3 flex items-center gap-1'>
@@ -270,29 +266,15 @@ export default function CaseStudyDetailScene({ cs }) {
             </div>
           </div>
 
-          <div className='relative aspect-[742/591] overflow-hidden  bg-white'>
+          <div className='relative aspect-[742/591] overflow-hidden'>
             {content.heroUsesFrameAsset ? (
               <>
                 <Image
                   src={content.heroImage}
                   alt={`${cs.client} hero preview`}
-                  fill
-                  className='object-contain lg:hidden'
-                  sizes='(min-width: 1024px) 783px, 100vw'
-                  priority
-                />
-                <Image
-                  src={content.heroImage}
-                  alt={`${cs.client} hero preview`}
                   width={1072}
                   height={805}
-                  className='absolute hidden max-w-none object-cover lg:block'
-                  style={{
-                    left: "-15.91%",
-                    top: "-19.75%",
-                    width: "136.88%",
-                    height: "136.25%",
-                  }}
+                  className='absolute object-cover block w-full bottom-[-5px] lg:bottom-[-20px]'
                   sizes='783px'
                   priority
                 />
@@ -312,13 +294,13 @@ export default function CaseStudyDetailScene({ cs }) {
       </section>
       <StatStrip stats={content.stats} />
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12 mt-12'>
         <div className='flex flex-col gap-10'>
-          <p className='font-display text-[28px] leading-none text-[#666] sm:text-[32px]'>
+          <p className='font-display text-[32px] leading-none text-[#666666]'>
             Overview
           </p>
           <div className='grid gap-8 lg:grid-cols-[1fr_338px] lg:items-start'>
-            <p className='max-w-[762px] font-display text-[30px] capitalize leading-[1.35] text-black sm:text-[36px] sm:leading-[56px]'>
+            <p className='max-w-[762px] font-display text-[36px] capitalize leading-[1.35] text-black'>
               {content.overview}
             </p>
             <div className='flex flex-wrap gap-4'>
@@ -329,7 +311,7 @@ export default function CaseStudyDetailScene({ cs }) {
           </div>
           <div className='flex justify-end'>
             <div className='flex w-auto gap-4 items-center rounded-[8px] bg-[#ebeae7] p-2'>
-              <p className='font-sans text-[14px] leading-none text-black'>
+              <p className='text-[14px] leading-none text-black'>
                 Generate AI Summary
               </p>
               <div className='ml-auto flex items-center gap-[6px]'>
@@ -345,10 +327,9 @@ export default function CaseStudyDetailScene({ cs }) {
             </div>
           </div>
         </div>
-
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='grid gap-5 lg:grid-cols-2'>
           <div className='relative aspect-[649/543] overflow-hidden rounded-[16px] bg-[#f7f7f7]'>
             <Image
@@ -386,7 +367,7 @@ export default function CaseStudyDetailScene({ cs }) {
                     height={20}
                     className='mt-[5px] shrink-0'
                   />
-                  <span className='font-body text-[18px] leading-[28px] text-[#333] sm:text-[20px] sm:leading-[30px]'>
+                  <span className='text-[18px] leading-[28px] text-[#333] sm:text-[20px] sm:leading-[30px]'>
                     {point}
                   </span>
                 </li>
@@ -410,7 +391,7 @@ export default function CaseStudyDetailScene({ cs }) {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-16 lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <h2 className='text-center font-display text-[40px] capitalize leading-[1.2] text-black sm:text-[48px] sm:leading-[60px]'>
           Strategic Thinking
         </h2>
@@ -426,7 +407,7 @@ export default function CaseStudyDetailScene({ cs }) {
         </div>
       </section>
 
-      <section className='bg-[#f9fff6] py-16 lg:py-24'>
+      <section className='bg-[#f9fff6] py-12'>
         <div className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px]'>
           <h2 className='text-center font-display text-[40px] uppercase leading-[1.2] text-black sm:text-[48px] sm:leading-[60px]'>
             WHAT WE BUILT
@@ -446,13 +427,13 @@ export default function CaseStudyDetailScene({ cs }) {
                 </div>
                 <div className='col-span-12 md:col-span-5 order-1 md:order-2'>
                   <h3
-                    className={`font-sans text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
+                    className={`text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
                   >
                     Structured product discovery, <br />
                     built for clarity.
                   </h3>
                   <p
-                    className={`mt-6 font-sans text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
+                    className={`mt-6 text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
                   >
                     Category paths, navigation cues, and product page layouts
                     were rebuilt around evaluation speed and buyer confidence.
@@ -471,12 +452,12 @@ export default function CaseStudyDetailScene({ cs }) {
               <div className='grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-10'>
                 <div className='col-span-12 md:col-span-5 flex flex-col justify-center'>
                   <h3
-                    className={`font-sans text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
+                    className={`text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
                   >
                     Seamless navigation designed for intuitive exploration.
                   </h3>
                   <p
-                    className={`mt-6 font-sans text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
+                    className={`mt-6 text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
                   >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut.
@@ -503,12 +484,12 @@ export default function CaseStudyDetailScene({ cs }) {
             <div className='col-span-2 md:col-span-1 bg-[#F0F6ED] text-black rounded-[16px] relative overflow-hidden min-h-auto md:min-h-[543px]'>
               <div className='flex flex-col justify-center pt-[28px] pl-[28px] max-w-[410px]'>
                 <h3
-                  className={`font-sans text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
+                  className={`text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
                 >
                   A consistent design system that scales across experiences.
                 </h3>
                 <p
-                  className={`mt-6 font-sans text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
+                  className={`mt-6 text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut.
@@ -532,12 +513,12 @@ export default function CaseStudyDetailScene({ cs }) {
             <div className='col-span-2 md:col-span-1 bg-[#F0F6ED] text-black rounded-[16px] relative overflow-hidden min-h-auto md:min-h-[543px]'>
               <div className='flex flex-col justify-center pt-[28px] pl-[28px] max-w-[450px]'>
                 <h3
-                  className={`font-sans text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
+                  className={`text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
                 >
                   A mobile-first interface that adapts across devices.
                 </h3>
                 <p
-                  className={`mt-6 font-sans text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
+                  className={`mt-6 text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut.
@@ -562,12 +543,12 @@ export default function CaseStudyDetailScene({ cs }) {
               <div className='grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-10'>
                 <div className='col-span-12 md:col-span-5 flex flex-col justify-center'>
                   <h3
-                    className={`font-sans text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
+                    className={`text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] `}
                   >
                     An enquiry journey optimised to convert intent into action.
                   </h3>
                   <p
-                    className={`mt-6 font-sans text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
+                    className={`mt-6 text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px] `}
                   >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut.
@@ -588,17 +569,17 @@ export default function CaseStudyDetailScene({ cs }) {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-16 lg:py-24'>
+      <section className='mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-12'>
         <Link
           href={content.visitUrl}
-          className='font-sans text-[18px] underline decoration-solid underline-offset-[4px]'
+          className='text-[18px] underline decoration-solid underline-offset-[4px]'
         >
           Visit Website
         </Link>
         <h2 className='mx-auto mt-[40px] max-w-[1096px] whitespace-pre-line font-display text-[38px] capitalize leading-[1.28] text-black sm:mt-[52px] sm:text-[48px] sm:leading-[72px]'>
           {content.closingHeadline}
         </h2>
-        <p className='mt-[28px] font-sans text-[18px] leading-[28px] text-[#666] sm:mt-[40px] sm:text-[20px] sm:leading-[30px]'>
+        <p className='mt-[28px] text-[18px] leading-[28px] text-[#666] sm:mt-[40px] sm:text-[20px] sm:leading-[30px]'>
           {content.closingSubcopy}
         </p>
         <div className='mt-[42px]'>

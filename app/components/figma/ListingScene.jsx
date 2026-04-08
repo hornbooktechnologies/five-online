@@ -101,12 +101,12 @@ function getCards(assetBasePath, cardLinks) {
 function FilterColumn({ title, items }) {
   return (
     <section className='border-t border-[#707070] pt-6'>
-      <h2 className='font-sans text-[18px] font-semibold uppercase tracking-[0.04em] text-black'>
+      <h2 className=' text-[18px] font-semibold uppercase tracking-[0.04em] text-black'>
         {title}
       </h2>
       <div className='mt-5 space-y-2'>
         {items.map((item) => (
-          <p key={item} className='font-sans text-[16px] leading-8 text-black'>
+          <p key={item} className=' text-[16px] leading-8 text-black'>
             {item}
           </p>
         ))}
@@ -118,7 +118,7 @@ function FilterColumn({ title, items }) {
 function Tag({ label, accent = false }) {
   return (
     <span
-      className={`inline-flex items-center justify-center px-3 py-1 font-sans text-[14px] leading-none text-black ${accent ? "bg-[#c1ffa6]" : "bg-[#98eb72]"
+      className={`inline-flex items-center justify-center px-3 py-1  text-[14px] leading-none text-black ${accent ? "bg-[#c1ffa6]" : "bg-[#98eb72]"
         }`}
     >
       {label}
@@ -207,10 +207,10 @@ function MobileCard({ card }) {
         />
       </div>
       <div className='min-h-[109px] bg-white px-3.5 py-[14px]'>
-        <h2 className='font-sans text-[20px] leading-none text-black'>
+        <h2 className=' text-[20px] leading-none text-black'>
           {card.title}
         </h2>
-        <p className='mt-[9px] max-w-[324px] font-sans text-[15px] leading-[20px] text-black'>
+        <p className='mt-[9px] max-w-[324px]  text-[15px] leading-[20px] text-black'>
           {card.text}
         </p>
       </div>
@@ -238,13 +238,13 @@ function MobileFilterSheet({
       <div className='fixed inset-x-0 bottom-[50px] z-50 max-h-[70vh] overflow-y-auto border-t border-black bg-white px-5 py-6 shadow-[0_-16px_40px_rgba(0,0,0,0.08)] lg:hidden'>
         <div className='mx-auto max-w-[400px]'>
           <div className='mb-6 flex items-center justify-between'>
-            <h2 className='font-sans text-[20px] leading-none text-black'>
+            <h2 className=' text-[20px] leading-none text-black'>
               Filter
             </h2>
             <button
               type='button'
               onClick={onClose}
-              className='font-sans text-[14px] uppercase tracking-[0.08em] text-black'
+              className=' text-[14px] uppercase tracking-[0.08em] text-black'
             >
               Close
             </button>
@@ -256,7 +256,7 @@ function MobileFilterSheet({
                 key={group.title}
                 className='border-t border-[#707070] pt-4'
               >
-                <h3 className='font-sans text-[16px] font-semibold uppercase tracking-[0.04em] text-black'>
+                <h3 className=' text-[16px] font-semibold uppercase tracking-[0.04em] text-black'>
                   {group.title}
                 </h3>
                 <div className='mt-4 flex flex-wrap gap-2'>
@@ -268,7 +268,7 @@ function MobileFilterSheet({
                         key={item}
                         type='button'
                         onClick={() => onSelect(group.title, item)}
-                        className={`rounded-full border px-4 py-2 font-sans text-[14px] leading-none transition-colors ${active
+                        className={`rounded-full border px-4 py-2  text-[14px] leading-none transition-colors ${active
                           ? "border-black bg-black text-white"
                           : "border-[#dcdcdc] bg-white text-black"
                           }`}
@@ -323,13 +323,13 @@ export default function ListingScene({
   };
 
   return (
-    <main className='bg-[#f9fff6] pb-[74px] text-black lg:pb-0'>
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-6 lg:py-20'>
+    <main className='bg-[#f9fff6] text-black lg:pb-0'>
+      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12 mb-12'>
         <div className='mx-auto text-center'>
           <h1 className='mx-auto max-w-[405px] whitespace-pre-line font-display text-[43px] leading-[1.15] text-black sm:max-w-[520px] sm:text-[56px] lg:max-w-none lg:text-[96px] lg:leading-[100px]'>
             {title}
           </h1>
-          <p className='mx-auto mt-7 max-w-[342px] font-sans text-[18px] leading-[26px] text-black sm:max-w-[560px] lg:mt-8 lg:max-w-[700px] lg:leading-[28px]'>
+          <p className='mx-auto mt-7 max-w-[342px]  text-[18px] leading-[26px] text-black sm:max-w-[560px] lg:mt-8 lg:max-w-[700px] lg:leading-[28px]'>
             {subtitle}
           </p>
         </div>
@@ -344,7 +344,7 @@ export default function ListingScene({
       </section>
 
       <section className='hidden lg:block'>
-        <div className='mx-auto w-full max-w-[1440px] px-6 pb-20 sm:px-8 lg:px-[60px] lg:pb-24'>
+        <div className='mx-auto w-full max-w-[1440px] px-6 pb-12 sm:px-8 lg:px-[60px]'>
           <div className='grid gap-12 lg:grid-cols-[220px_minmax(0,1fr)] xl:grid-cols-[250px_minmax(0,1fr)]'>
             <aside className='space-y-10 lg:sticky lg:top-[108px] lg:self-start'>
               {filterGroups.map((group) => (
@@ -357,12 +357,12 @@ export default function ListingScene({
 
               {/* {stickyLabel ? (
                 <div className='rounded-[20px] border border-black bg-white p-6'>
-                  <p className='font-sans text-[20px] leading-[30px] text-black'>
+                  <p className=' text-[20px] leading-[30px] text-black'>
                     {stickyLabel}
                   </p>
                   <Link
                     href='/contact'
-                    className='mt-5 inline-flex items-center justify-center rounded-full bg-black px-5 py-3 font-sans text-[16px] text-white'
+                    className='mt-5 inline-flex items-center justify-center rounded-full bg-black px-5 py-3  text-[16px] text-white'
                   >
                     Book a Strategy Call
                   </Link>
@@ -399,13 +399,13 @@ export default function ListingScene({
 
                     <div className='flex flex-1 flex-col gap-4 px-6 py-6'>
                       <div className='flex items-start justify-between gap-4'>
-                        <h2 className='font-sans text-[22px] leading-[30px] text-black'>
+                        <h2 className=' text-[22px] leading-[30px] text-black'>
                           {card.title}
                         </h2>
                         {card.href ? <CardArrow /> : null}
                       </div>
 
-                      <p className='font-sans text-[15px] leading-[24px] text-black'>
+                      <p className=' text-[15px] leading-[24px] text-black'>
                         {card.text}
                       </p>
 
@@ -427,7 +427,7 @@ export default function ListingScene({
         </div>
       </section>
 
-      <section className='relative isolate hidden overflow-hidden bg-black text-white lg:block'>
+      <section className='relative isolate hidden overflow-hidden bg-black text-white lg:block my-12'>
         <Image
           src={`${assetBasePath}/cta-bg.png`}
           alt=''
@@ -437,18 +437,18 @@ export default function ListingScene({
         />
         <div className='absolute inset-0 bg-black/60' />
         <div className='relative mx-auto w-full max-w-[1440px] px-6 py-16 sm:px-8 lg:px-[60px] lg:py-20'>
-          <h2 className='font-body text-[36px] font-bold leading-[1.2] text-white sm:text-[42px] lg:text-[48px] lg:leading-[64px]'>
+          <h2 className='text-[36px] font-bold leading-[1.2] text-white sm:text-[42px] lg:text-[48px] lg:leading-[64px]'>
             Launching D2C Is a Revenue Decision.
             <br />
             Not a Design Project.
           </h2>
           <div className='flex justify-between items-center gap-10 mt-8'>
-            <p className='font-body text-[20px] leading-[32px] text-[#cacaca]'>
+            <p className='text-[20px] leading-[32px] text-[#cacaca]'>
               If you&apos;re serious about building a scalable ecommerce brand,
               start with structure.
             </p>
             <div>
-              <Button href="/contact" variant="outline" size="md">
+              <Button href="/contact#contact-form-panel" variant="outline" size="md">
                 Book Your D2C Launch Strategy Call
                 <ArrowRightIcon />
               </Button>
@@ -465,7 +465,7 @@ export default function ListingScene({
             className='flex h-full items-center gap-2 pl-[19px] pr-4 text-left'
           >
             <FilterIcon />
-            <span className='font-sans text-[18px] leading-none text-black'>
+            <span className=' text-[18px] leading-none text-black'>
               Filter
             </span>
             <span className='ml-auto'>
@@ -477,7 +477,7 @@ export default function ListingScene({
 
           <Link
             href='/contact'
-            className='block truncate px-4 font-sans text-[14px] leading-none text-black'
+            className='block truncate px-4  text-[14px] leading-none text-black'
           >
             {mobileStickyLabel}
           </Link>
