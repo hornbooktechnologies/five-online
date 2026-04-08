@@ -20,7 +20,7 @@ export default function Footer() {
   return (
     // Figma: no explicit bg rectangle on footer area — white bg with black text
     <footer className='bg-white'>
-      <Container className='!px-0 !pb-12 !pt-0'>
+      <Container className='!px-0 !pb-12 !pt-0 !mb-12'>
         {/* Desktop View — Poppins 400 14px #000, green dots #6abd45 10×10px */}
         <div className='hidden md:flex flex-wrap justify-center items-center gap-y-3'>
           {serviceLinks.map((link, i) => (

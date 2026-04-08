@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import WhatsAppButton from "./components/common/WhatsAppButton";
 import AosInit from "./components/common/AosInit";
 import ScrollToTop from "./components/common/ScrollToTop";
+import Disclaimer from "./components/layout/Disclaimer";
 
 export const metadata = {
   title: {
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />
+        <Disclaimer />
         <WhatsAppButton />
       </body>
     </html>

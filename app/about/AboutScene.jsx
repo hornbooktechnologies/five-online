@@ -67,7 +67,7 @@ const socialLinks = [
     label: "Instagram",
   },
   {
-    href: "https://www.linkedin.com/company/71971288/",
+    href: "https://www.linkedin.com/company/71971288/admin/feed/posts/",
     icon: "/figma/about/social-2.png",
     label: "LinkedIn",
   },
