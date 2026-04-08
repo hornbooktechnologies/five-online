@@ -53,7 +53,7 @@ export default function ScheduleCallSection() {
           <div className='flex flex-col gap-3'>
             <img src="/images/book-apt-calender.png" className="w-full rounded-[10px]" alt="Booking Calendar" loading="lazy" />
             <div className='bg-white rounded-[10px] p-4 flex flex-col gap-3 '>
-              <p className="text-[13px] font-mono bg-[#ff000010] border border-dashed p-2 rounded-[10px]"><strong className="text-white">DISCLAIMER:</strong> If your budget is under Rs.1 lac , this is NOT for you. Under this revenue, do NOT book since your call will be CANCELLED automatically.</p>
+              <p className="text-[13px] font-mono bg-[#ff000010] border border-dashed p-2 rounded-[10px]"><strong>DISCLAIMER:</strong> If your budget is under Rs.1 lac , this is NOT for you. Under this revenue, do NOT book since your call will be CANCELLED automatically.</p>
               <h6 className="text-[13px] font-mono">If you have a general inquiry, you can send it to our email : <a href="mailto:contact@fiveonline.in">contact@fiveonline.in</a></h6>
             </div>
           </div>
