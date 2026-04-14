@@ -6,98 +6,6 @@ import Link from "next/link";
 import Button from '@/app/components/common/Button';
 import { ArrowRightIcon } from "../icons";
 
-const CARD_BODY =
-  "A selection of brands we've helped launch, scale, and transform online.";
-
-const sceneCards = {
-  "/figma/case-studies": [
-    {
-      key: "card-1",
-      image: "card-1.jpg",
-      title: "Garware Hi-Tech Films",
-      text: CARD_BODY,
-      tags: ["Enterprise", "Transformation", "Growth"],
-      accent: true,
-    },
-    {
-      key: "card-2",
-      image: "card-2.jpg",
-      title: "Budget Store",
-      text: CARD_BODY,
-      tags: ["D2C", "Shopify"],
-    },
-    {
-      key: "card-3",
-      image: "card-3.jpg",
-      title: "Zeal Aqua",
-      text: CARD_BODY,
-      tags: ["Corporate", "Brand"],
-    },
-    {
-      key: "card-4",
-      image: "card-2.jpg",
-      title: "Budget Store",
-      text: CARD_BODY,
-      tags: ["Retail", "CRO"],
-    },
-    {
-      key: "card-5",
-      image: "card-3.jpg",
-      title: "Zeal Aqua",
-      text: CARD_BODY,
-      tags: ["FMCG", "Experience"],
-    },
-  ],
-  "/figma/portfolio": [
-    {
-      key: "card-1",
-      image: "card-1.jpg",
-      title: "L&T Realty",
-      text: CARD_BODY,
-      tags: ["Real Estate", "Luxury"],
-      accent: true,
-    },
-    {
-      key: "card-2",
-      image: "card-2.jpg",
-      title: "Budget Store",
-      text: CARD_BODY,
-      tags: ["D2C", "Shopify"],
-    },
-    {
-      key: "card-3",
-      image: "card-3.jpg",
-      title: "Zeal Aqua",
-      text: CARD_BODY,
-      tags: ["FMCG", "Brand"],
-    },
-    {
-      key: "card-4",
-      image: "card-2.jpg",
-      title: "Fashion Lifestyle Brand",
-      text: CARD_BODY,
-      tags: ["Lifestyle", "Launch"],
-    },
-    {
-      key: "card-5",
-      image: "card-3.jpg",
-      title: "Enterprise SaaS Platform",
-      text: CARD_BODY,
-      tags: ["B2B", "Platform"],
-    },
-  ],
-};
-
-function getCards(assetBasePath, cardLinks) {
-  const cards = sceneCards[assetBasePath] ?? sceneCards["/figma/portfolio"];
-
-  return cards.map((card, index) => ({
-    ...card,
-    image: `${assetBasePath}/${card.image}`,
-    href: cardLinks[index],
-  }));
-}
-
 function FilterColumn({ title, items }) {
   return (
     <section className='border-t border-[#707070] pt-6'>
@@ -183,10 +91,12 @@ function MobileChevron({ open = false }) {
 }
 
 function MobileCard({ card }) {
-  const Wrapper = card.href ? Link : "article";
+  const isExternal = card.href?.startsWith('http');
+  const Wrapper = card.href ? (isExternal ? "a" : Link) : "article";
   const wrapperProps = card.href
     ? {
       href: card.href,
+      ...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {}),
       "aria-label": `Open ${card.title}`,
     }
     : {};
@@ -294,9 +204,10 @@ export default function ListingScene({
   filterGroups,
   stickyLabel,
   cardLinks = [],
+  projects = [],
 }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const cards = getCards(assetBasePath, cardLinks);
+  const cards = projects;
   const mobileStickyLabel = stickyLabel ?? "Want results like these?";
   const [selectedFilters, setSelectedFilters] = useState(() =>
     Object.fromEntries(
@@ -346,7 +257,7 @@ export default function ListingScene({
       <section className='hidden lg:block'>
         <div className='mx-auto w-full max-w-[1440px] px-6 pb-12 sm:px-8 lg:px-[60px]'>
           <div className='grid gap-12 lg:grid-cols-[220px_minmax(0,1fr)] xl:grid-cols-[250px_minmax(0,1fr)]'>
-            <aside className='space-y-10 lg:sticky lg:top-[108px] lg:self-start'>
+            <aside className='space-y-10 lg:sticky lg:top-[108px] lg:self-start lg:max-h-[calc(100vh-120px)] lg:overflow-y-auto lg:pr-4'>
               {filterGroups.map((group) => (
                 <FilterColumn
                   key={group.title}
@@ -372,10 +283,12 @@ export default function ListingScene({
 
             <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
               {cards.map((card) => {
-                const Wrapper = card.href ? Link : "article";
+                const isExternal = card.href?.startsWith('http');
+                const Wrapper = card.href ? (isExternal ? "a" : Link) : "article";
                 const wrapperProps = card.href
                   ? {
                     href: card.href,
+                    ...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {}),
                     "aria-label": `Open ${card.title}`,
                   }
                   : {};
