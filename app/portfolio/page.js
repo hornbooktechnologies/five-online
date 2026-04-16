@@ -9,7 +9,7 @@ export const metadata = {
 const projects = [
   {
     key: "card-1",
-    image: "/figma/portfolio/card-1.jpg",
+    image: "/figma/portfolio/project-cover-image/Neeta-Lulla.jpg",
     title: "Neeta Lulla",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify", "Maintenance"],
@@ -17,7 +17,7 @@ const projects = [
   },
   {
     key: "card-2",
-    image: "/figma/portfolio/card-2.jpg",
+    image: "/figma/portfolio/project-cover-image/Wonderchef.jpg",
     title: "Wonderchef",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Home Appliances", "Shopify", "UI/UX"],
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     key: "card-3",
-    image: "/figma/portfolio/card-3.jpg",
+    image: "/figma/portfolio/project-cover-image/Just-In-Time.jpg",
     title: "Just In Time",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Lifestyle", "Shopify"],
@@ -33,7 +33,7 @@ const projects = [
   },
   {
     key: "card-4",
-    image: "/figma/portfolio/card-1.jpg",
+    image: "/figma/portfolio/project-cover-image/Flash-Mob-Nation.jpg",
     title: "Flashmob Nation",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify"],
@@ -41,7 +41,7 @@ const projects = [
   },
   {
     key: "card-5",
-    image: "/figma/portfolio/card-2.jpg",
+    image: "/figma/portfolio/project-cover-image/G3-Fashion.jpg",
     title: "G3 Fashion",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Custom Build"],
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     key: "card-6",
-    image: "/figma/portfolio/card-3.jpg",
+    image: "/figma/portfolio/project-cover-image/Buget-Store.jpg",
     title: "BugetStore",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Lifestyle", "Shopify", "CRO"],
@@ -57,7 +57,7 @@ const projects = [
   },
   {
     key: "card-7",
-    image: "/figma/portfolio/card-1.jpg",
+    image: "/figma/portfolio/project-cover-image/Journey-East.jpg",
     title: "Journey East",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify"],
@@ -65,7 +65,7 @@ const projects = [
   },
   {
     key: "card-8",
-    image: "/figma/portfolio/card-2.jpg",
+    image: "/figma/portfolio/project-cover-image/Linen-and-Linen-2.jpg",
     title: "Linen and Linens",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify", "Maintenance"],
@@ -73,7 +73,7 @@ const projects = [
   },
   {
     key: "card-9",
-    image: "/figma/portfolio/card-3.jpg",
+    image: "/figma/portfolio/project-cover-image/Suvidha.jpg",
     title: "Suvidha Fashion",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify", "Maintenance"],
@@ -81,7 +81,7 @@ const projects = [
   },
   {
     key: "card-10",
-    image: "/figma/portfolio/card-1.jpg",
+    image: "/figma/portfolio/project-cover-image/Naarika.jpg",
     title: "Nareeka",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify"],
@@ -89,7 +89,7 @@ const projects = [
   },
   {
     key: "card-11",
-    image: "/figma/portfolio/card-2.jpg",
+    image: "/figma/portfolio/project-cover-image/Label-Aishwaryrika.jpg",
     title: "Label Aishwaryrika",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify", "Maintenance"],
@@ -97,7 +97,7 @@ const projects = [
   },
   {
     key: "card-12",
-    image: "/figma/portfolio/card-3.jpg",
+    image: "/figma/portfolio/project-cover-image/Anora.jpg",
     title: "Anora World",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify", "B2B"],
@@ -105,7 +105,7 @@ const projects = [
   },
   {
     key: "card-13",
-    image: "/figma/portfolio/card-1.jpg",
+    image: "/figma/portfolio/project-cover-image/Heritage-Haat-2.jpg",
     title: "Heritage Haat",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify", "CRO"],
@@ -113,7 +113,7 @@ const projects = [
   },
   {
     key: "card-14",
-    image: "/figma/portfolio/card-2.jpg",
+    image: "/figma/portfolio/project-cover-image/Bennevis.jpg",
     title: "Bennevis Fashion",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Custom Build"],
@@ -121,7 +121,7 @@ const projects = [
   },
   {
     key: "card-15",
-    image: "/figma/portfolio/card-3.jpg",
+    image: "/figma/portfolio/project-cover-image/House-Of-Sagar.jpg",
     title: "House of Sagar",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Custom Build"],
@@ -129,7 +129,7 @@ const projects = [
   },
   {
     key: "card-16",
-    image: "/figma/portfolio/card-1.jpg",
+    image: "/figma/portfolio/project-cover-image/SAR-Jewels.jpg",
     title: "Sar Jewels",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Jewellery", "Shopify"],
@@ -137,7 +137,7 @@ const projects = [
   },
   {
     key: "card-17",
-    image: "/figma/portfolio/card-2.jpg",
+    image: "/figma/portfolio/project-cover-image/Hair-Finity.jpg",
     title: "Hairfinity",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Hair Care", "Shopify"],
@@ -145,7 +145,7 @@ const projects = [
   },
   {
     key: "card-18",
-    image: "/figma/portfolio/card-3.jpg",
+    image: "/figma/portfolio/project-cover-image/Jamna.jpg",
     title: "Jamna Herbal",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Pharma", "Ayurved", "Shopify", "CRO"],
@@ -153,7 +153,7 @@ const projects = [
   },
   {
     key: "card-19",
-    image: "/figma/portfolio/card-1.jpg",
+    image: "/figma/portfolio/project-cover-image/Sacred-and-Organic.jpg",
     title: "Sacred and Organic",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Skin Care", "Shopify"],
@@ -161,7 +161,7 @@ const projects = [
   },
   {
     key: "card-20",
-    image: "/figma/portfolio/card-2.jpg",
+    image: "/figma/portfolio/project-cover-image/Finerock.jpg",
     title: "Finerock",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Jewellery", "Shopify"],
@@ -169,7 +169,7 @@ const projects = [
   },
   {
     key: "card-21",
-    image: "/figma/portfolio/card-3.jpg",
+    image: "/figma/portfolio/project-cover-image/card-3.jpg",
     title: "Marvi India",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Jewellery", "Shopify"],
@@ -177,7 +177,7 @@ const projects = [
   },
   {
     key: "card-22",
-    image: "/figma/portfolio/card-1.jpg",
+    image: "/figma/portfolio/project-cover-image/Sagar-Hill-Road.jpg",
     title: "Sagar Hill Road",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Fashion", "Shopify", "CRO"],
@@ -185,7 +185,7 @@ const projects = [
   },
   {
     key: "card-23",
-    image: "/figma/portfolio/card-2.jpg",
+    image: "/figma/portfolio/project-cover-image/card-2.jpg",
     title: "Muvtech",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Mobile", "Shopify", "CRO"],
@@ -193,7 +193,7 @@ const projects = [
   },
   {
     key: "card-24",
-    image: "/figma/portfolio/card-3.jpg",
+    image: "/figma/portfolio/project-cover-image/card-3.jpg",
     title: "Sollfege ",
     text: "A selection of brands we've helped launch, scale, and transform online.",
     tags: ["Mobile", "Shopify", "CRO"],

@@ -6,18 +6,28 @@ import Link from "next/link";
 import Button from '@/app/components/common/Button';
 import { ArrowRightIcon } from "../icons";
 
-function FilterColumn({ title, items }) {
+function FilterColumn({ title, items, selectedFilter, onSelect }) {
   return (
     <section className='border-t border-[#707070] pt-6'>
       <h2 className=' text-[18px] font-semibold uppercase tracking-[0.04em] text-black'>
         {title}
       </h2>
       <div className='mt-5 space-y-2'>
-        {items.map((item) => (
-          <p key={item} className=' text-[16px] leading-8 text-black'>
-            {item}
-          </p>
-        ))}
+        {items.map((item) => {
+          const isActive = selectedFilter === item;
+          return (
+            <button
+              key={item}
+              onClick={() => onSelect(title, item)}
+              className={`block w-full text-left text-[16px] leading-8 transition-colors rounded-full px-4 py-2 cursor-pointer ${isActive
+                ? "border-black bg-black text-white"
+                : "hover:border border-[#dcdcdc] text-black"
+                }`}
+            >
+              {item}
+            </button>
+          );
+        })}
       </div>
     </section>
   );
@@ -263,6 +273,8 @@ export default function ListingScene({
                   key={group.title}
                   title={group.title}
                   items={group.items}
+                  selectedFilter={selectedFilters[group.title]}
+                  onSelect={updateSelectedFilter}
                 />
               ))}
 
@@ -281,7 +293,7 @@ export default function ListingScene({
               ) : null} */}
             </aside>
 
-            <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
+            <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3 grid-rows-[auto_auto_auto_auto]'>
               {cards.map((card) => {
                 const isExternal = card.href?.startsWith('http');
                 const Wrapper = card.href ? (isExternal ? "a" : Link) : "article";
@@ -297,10 +309,10 @@ export default function ListingScene({
                   <Wrapper
                     key={card.key}
                     {...wrapperProps}
-                    className={`group flex h-full flex-col overflow-hidden border border-[#ececec] bg-white transition-transform duration-200 ${card.href ? "hover:-translate-y-1" : ""
+                    className={`group grid row-span-4 grid-rows-subgrid h-full flex-col overflow-hidden border border-[#ececec] bg-white transition-transform duration-200 ${card.href ? "hover:-translate-y-1" : ""
                       }`}
                   >
-                    <div className='relative aspect-[368/553] overflow-hidden bg-[#edf6e8]'>
+                    <div className='relative row-span-1 aspect-[368/553] overflow-hidden bg-[#edf6e8]'>
                       <Image
                         src={card.image}
                         alt={card.title}
@@ -310,19 +322,19 @@ export default function ListingScene({
                       />
                     </div>
 
-                    <div className='flex flex-1 flex-col gap-4 px-6 py-6'>
-                      <div className='flex items-start justify-between gap-4'>
+                    <div className='row-span-3 grid grid-rows-subgrid gap-4 px-6 py-6'>
+                      <div className='row-span-1 flex items-start justify-between gap-4'>
                         <h2 className=' text-[22px] leading-[30px] text-black'>
                           {card.title}
                         </h2>
                         {card.href ? <CardArrow /> : null}
                       </div>
 
-                      <p className=' text-[15px] leading-[24px] text-black'>
+                      <p className='row-span-1 text-[15px] leading-[24px] text-black'>
                         {card.text}
                       </p>
 
-                      <div className='mt-auto flex flex-wrap gap-2 pt-2'>
+                      <div className='row-span-1 mt-auto flex flex-wrap gap-2 pt-2 h-full items-start'>
                         {card.tags.map((tag, index) => (
                           <Tag
                             key={`${card.key}-${tag}`}
