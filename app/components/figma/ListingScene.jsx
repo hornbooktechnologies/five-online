@@ -122,7 +122,7 @@ function MobileCard({ card }) {
           src={card.image}
           alt={card.title}
           fill
-          className='object-cover'
+          className='object-cover object-top'
           sizes='(min-width: 768px) 368px, calc(100vw - 40px)'
         />
       </div>
@@ -293,7 +293,7 @@ export default function ListingScene({
               ) : null} */}
             </aside>
 
-            <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3 grid-rows-[auto_auto_auto_auto]'>
+            <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
               {cards.map((card) => {
                 const isExternal = card.href?.startsWith('http');
                 const Wrapper = card.href ? (isExternal ? "a" : Link) : "article";
@@ -309,39 +309,43 @@ export default function ListingScene({
                   <Wrapper
                     key={card.key}
                     {...wrapperProps}
-                    className={`group grid row-span-4 grid-rows-subgrid h-full flex-col overflow-hidden border border-[#ececec] bg-white transition-transform duration-200 ${card.href ? "hover:-translate-y-1" : ""
+                    className={`group flex flex-col h-full overflow-hidden border border-[#ececec] bg-white transition-all duration-300 ${card.href ? "hover:-translate-y-1" : ""
                       }`}
                   >
-                    <div className='relative row-span-1 aspect-[368/553] overflow-hidden bg-[#edf6e8]'>
+                    <div className='relative shrink-0 aspect-[368/553] overflow-hidden bg-[#edf6e8]'>
                       <Image
                         src={card.image}
                         alt={card.title}
                         fill
-                        className='object-cover transition-transform duration-300 group-hover:scale-[1.015]'
+                        className='object-cover object-top transition-transform duration-300 group-hover:scale-[1.015]'
                         sizes='(min-width: 1280px) 32vw, (min-width: 768px) 50vw, 100vw'
                       />
                     </div>
 
-                    <div className='row-span-3 grid grid-rows-subgrid gap-4 px-6 py-6'>
-                      <div className='row-span-1 flex items-start justify-between gap-4'>
+                    <div className='flex flex-col flex-1 px-6 py-6 bg-white'>
+                      <div className='flex items-start justify-between gap-4'>
                         <h2 className=' text-[22px] leading-[30px] text-black'>
                           {card.title}
                         </h2>
                         {card.href ? <CardArrow /> : null}
                       </div>
 
-                      <p className='row-span-1 text-[15px] leading-[24px] text-black'>
+                      {card.text && <p className='text-[15px] leading-[24px] text-black mt-4'>
                         {card.text}
-                      </p>
+                      </p>}
 
-                      <div className='row-span-1 mt-auto flex flex-wrap gap-2 pt-2 h-full items-start'>
-                        {card.tags.map((tag, index) => (
-                          <Tag
-                            key={`${card.key}-${tag}`}
-                            label={tag}
-                            accent={card.accent && index === 0}
-                          />
-                        ))}
+                      <div className='mt-auto grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out'>
+                        <div className='overflow-hidden'>
+                          <div className='pt-4 flex flex-wrap gap-2 items-start'>
+                            {card.tags.map((tag, index) => (
+                              <Tag
+                                key={`${card.key}-${tag}`}
+                                label={tag}
+                                accent={card.accent && index === 0}
+                              />
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </Wrapper>
