@@ -2,6 +2,7 @@ import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import Button from '@/app/components/common/Button';
+import FAQAccordion from "@/app/components/common/FAQAccordion";
 
 const aiSummaryIcons = [
   "/figma/case-study-detail/ai-summary-1.png",
@@ -405,6 +406,12 @@ export default function CaseStudyDetailScene({ cs }) {
           </Button>
         </div>
       </section>
+
+      <FAQAccordion
+        title={content.faqTitle}
+        description={content.faqDescription}
+        faqs={content.faqsItems}
+      />
     </main>
   );
 }

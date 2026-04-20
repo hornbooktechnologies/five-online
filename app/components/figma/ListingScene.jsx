@@ -117,12 +117,12 @@ function MobileCard({ card }) {
       className={`mx-auto block max-w-[368px] ${card.href ? "cursor-pointer" : ""
         }`}
     >
-      <div className='relative aspect-[368/553] overflow-hidden bg-[#edf6e8]'>
+      <div className='relative aspect-[368/553] overflow-hidden bg-[#edf6e8] shadow-xl'>
         <Image
           src={card.image}
           alt={card.title}
           fill
-          className='object-cover object-top'
+          className='object-top'
           sizes='(min-width: 768px) 368px, calc(100vw - 40px)'
         />
       </div>
@@ -312,12 +312,12 @@ export default function ListingScene({
                     className={`group flex flex-col h-full overflow-hidden border border-[#ececec] bg-white transition-all duration-300 ${card.href ? "hover:-translate-y-1" : ""
                       }`}
                   >
-                    <div className='relative shrink-0 aspect-[368/553] overflow-hidden bg-[#edf6e8]'>
+                    <div className='relative shrink-0 aspect-[368/553] overflow-hidden bg-[#edf6e8] shadow-xl'>
                       <Image
                         src={card.image}
                         alt={card.title}
                         fill
-                        className='object-cover object-top transition-transform duration-300 group-hover:scale-[1.015]'
+                        className='object-top transition-transform duration-300 group-hover:scale-[1.015]'
                         sizes='(min-width: 1280px) 32vw, (min-width: 768px) 50vw, 100vw'
                       />
                     </div>

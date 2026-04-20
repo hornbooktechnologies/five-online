@@ -17,7 +17,7 @@ const MOBILE_MENU_ITEMS = [
     items: [
       { label: 'New Business Website Launch', href: '#' },
       { label: 'Corporate Website Revamp', href: '#' },
-      { label: 'D2C Ecommerce Launch', href: '#' },
+      { label: 'D2C Ecommerce Launch', href: '/capabilities/d2c-ecommerce-launch' },
       { label: 'Conversion & CRO Audit', href: '#' },
       { label: 'Website Maintenance & Performance', href: '#' },
       { label: 'Get Found in AI Search', href: '#' },
@@ -180,7 +180,7 @@ export default function Header() {
                       <ul className="absolute hidden group-hover:block bg-white top-[95%] -left-4 min-w-[280px] rounded-lg py-2 shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-[#0000002d] z-50">
                         <li><Link href="#" className="block px-6 py-2.5 text-[15px] text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">New Business Website Launch</Link></li>
                         <li><Link href="#" className="block px-6 py-2.5 text-[15px] text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Corporate Website Revamp</Link></li>
-                        <li><Link href="#" className="block px-6 py-2.5 text-[15px] text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">D2C Ecommerce Launch</Link></li>
+                        <li><Link href="/capabilities/d2c-ecommerce-launch" className="block px-6 py-2.5 text-[15px] text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">D2C Ecommerce Launch</Link></li>
                         <li><Link href="#" className="block px-6 py-2.5 text-[15px] text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Conversion & CRO Audit</Link></li>
                         <li><Link href="#" className="block px-6 py-2.5 text-[15px] text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Website Maintenance & Performance</Link></li>
                         <li><Link href="#" className="block px-6 py-2.5 text-[15px] text-black hover:bg-[#f5f5f5] hover:text-[#6ABD45] transition-colors">Get Found in AI Search</Link></li>

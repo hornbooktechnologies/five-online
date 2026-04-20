@@ -23,16 +23,15 @@ const bestFitCards = [
   {
     background: "#dcffcc",
     title: "AGENCY PARTNERS",
-    body: "Speed, security, and structured ongoing improvements.",
+    body: "White-label and partner engagements for agencies who need senior D2C and Shopify expertise behind their delivery.",
     icon: "/figma/contact/who-icon-3.png",
   },
 ];
 
 const notForPills = [
   "One-page brochure websites",
-  "Just make it look good projects",
   "Rs30-50K website requests",
-  "Urgent 7-day builds without strategy",
+  "Urgent build without strategy",
 ];
 
 function HighlightChip({ children }) {
@@ -97,6 +96,14 @@ export default function ContactScene() {
       nextErrors.email = "Enter a valid email address.";
     }
 
+    if (!form.budget) {
+      nextErrors.budget = "Please select a budget range.";
+    }
+
+    if (!form.startDate) {
+      nextErrors.startDate = "Please select a project start date.";
+    }
+
     if (!form.notRobot) {
       nextErrors.notRobot = "Please complete the human verification.";
     }
@@ -135,13 +142,10 @@ export default function ContactScene() {
       <section className="mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12">
         <div className="mx-auto max-w-[1080px] text-center">
           <h1 className="text-[48px] leading-[0.96] text-black sm:text-[68px] lg:text-[96px] lg:leading-[100px]">
-            Build Revenue Engine.
-            <br />
-            Not Just Websites.
+            Let's Find Out If We're The Right Fit
           </h1>
           <p className="mx-auto mt-8 max-w-[640px] text-[18px] leading-[28px] text-black">
-            We partner with serious brands who see their website as a revenue
-            engine, not a design expense.
+            Our team reviews every submission personally — if there's a fit, we schedule a 30-minute discovery call with our strategy team.
           </p>
 
           <div className="mt-10">
@@ -229,10 +233,10 @@ export default function ContactScene() {
                   Mumbai
                 </h3>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919930265505"
                   className="block text-[18px] leading-[30px] text-black"
                 >
-                  +91 9876543210
+                  +91 9930265505
                 </a>
                 <a
                   href="mailto:contact@fiveonline.in"
@@ -249,6 +253,13 @@ export default function ContactScene() {
             onSubmit={handleSubmit}
             noValidate
           >
+            <div className="mb-6 bg-[#eaffdf] px-5 py-3">
+              <p className="text-[15px] leading-[22px] text-black">
+                {submitted
+                  ? "Application received. We review every application personally and follow up if aligned."
+                  : "We review every application personally. If aligned, we schedule a strategic call."}
+              </p>
+            </div>
             <div className="space-y-6">
               <div>
                 <label className="mb-3 block text-[18px] leading-none text-black">
@@ -298,30 +309,33 @@ export default function ContactScene() {
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <label className="mb-3 block text-[16px] leading-none text-black">
-                    Budget Range
+                    Budget Range <span className="text-[#ff3b30]">*</span>
                   </label>
                   <select
                     name="budget"
                     value={form.budget}
                     onChange={updateField("budget")}
+                    aria-invalid={Boolean(errors.budget)}
                     className="h-[50px] w-full border border-black bg-white px-4 text-[18px] text-black outline-none"
                   >
                     <option value="">-None-</option>
-                    <option>Rs1L - Rs3L</option>
+                    <option>Rs1.5L - Rs3L</option>
                     <option>Rs3L - Rs5L</option>
                     <option>Rs5L - Rs10L</option>
                     <option>Rs10L+</option>
                   </select>
+                  <FieldError message={errors.budget} />
                 </div>
 
                 <div>
                   <label className="mb-3 block text-[16px] leading-none text-black">
-                    Project Start Date
+                    Project Start Date <span className="text-[#ff3b30]">*</span>
                   </label>
                   <select
                     name="startDate"
                     value={form.startDate}
                     onChange={updateField("startDate")}
+                    aria-invalid={Boolean(errors.startDate)}
                     className="h-[50px] w-full border border-black bg-white px-4 text-[18px] text-black outline-none"
                   >
                     <option value="">-None-</option>
@@ -330,12 +344,13 @@ export default function ContactScene() {
                     <option>1-3 months</option>
                     <option>3+ months</option>
                   </select>
+                  <FieldError message={errors.startDate} />
                 </div>
               </div>
 
               <div>
                 <label className="mb-3 block text-[18px] leading-none text-black">
-                  Product / Brand Idea
+                  Tell us about your project
                 </label>
                 <textarea
                   name="idea"
@@ -358,14 +373,6 @@ export default function ContactScene() {
                 Submit
                 <ArrowRightIcon />
               </Button>
-
-              <div className="mt-6 bg-[#eaffdf] px-5 py-3">
-                <p className="text-[15px] leading-[22px] text-black">
-                  {submitted
-                    ? "Application received. We review every application personally and follow up if aligned."
-                    : "We review every application personally. If aligned, we schedule a strategic call."}
-                </p>
-              </div>
             </div>
           </form>
         </div>

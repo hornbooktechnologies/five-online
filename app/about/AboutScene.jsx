@@ -7,6 +7,8 @@ import Link from "next/link";
 import { faqsByPage } from "@/lib/data/faqs";
 import Button from '@/app/components/common/Button';
 import { ArrowRightIcon } from "../components/icons";
+import TrustedPartnersSection from "@/app/components/sections/home/TrustedPartnersSection";
+import FAQAccordion from "@/app/components/common/FAQAccordion";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
@@ -78,6 +80,28 @@ const socialLinks = [
   },
 ];
 
+const stats = [
+  { value: "20+", label: "Years in Business" },
+  { value: "500+", label: "Projects Delivered" },
+  { value: "40+", label: "Industries" },
+  { value: "12+", label: "Countries" },
+]
+
+const faqsItems = [
+  {
+    q: "Which web design agency in India specialises in D2C ecommerce and Shopify development?",
+    a: "Five Online is a Mumbai-based web design and Shopify development agency specialising in D2C ecommerce brands and enterprise websites. With over 20 years of experience and 500+ projects delivered across India and international markets, Five Online operates as a revenue-first consulting partner — not a typical execution agency. Their work spans D2C fashion, health, consumer goods, and corporate brands, with measurable outcomes in conversions, ROAS, and revenue growth.",
+  },
+  {
+    q: "What is the difference between a web design agency and a revenue-first web design company?",
+    a: "A traditional web design agency focuses on delivering a website as a finished product — design, development, and handover. A revenue-first web design company like Five Online treats the website as a growth tool, embedding strategy, conversion architecture, and performance thinking from day one. Every decision — from UX structure to page copy to technical integrations — is evaluated against one question: will this contribute to measurable business revenue?",
+  },
+  {
+    q: "Is Five Online a founder-led agency and who runs it?",
+    a: "Yes. Five Online is led by Nayan Khandor, CEO and Growth Strategist, who has been building revenue-focused digital platforms for over 20 years. Five Online deliberately limits the number of active projects to ensure senior-level attention on every brand they work with.",
+  },
+];
+
 function getSlidesToShowForWidth(width) {
   if (width < 480) {
     return 1;
@@ -103,33 +127,37 @@ function HighlightChip({ children }) {
   );
 }
 
-function FaqItem({ faq, open, onToggle }) {
+function StatStrip({ stats }) {
+  if (!stats) return null;
   return (
-    <article className='border-b border-black'>
-      <button
-        type='button'
-        onClick={onToggle}
-        className='flex w-full items-start gap-6 py-6 text-left cursor-pointer'
-      >
-        <span className='flex-1 text-[18px] font-medium leading-[30px] text-black sm:text-[20px]'>
-          {faq.question}
-        </span>
-        <span className='flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black text-[20px] leading-none bg-black text-white'>
-          {open ? "-" : "+"}
-        </span>
-      </button>
-
-      {open ? (
-        <p className='pb-6 pr-12 text-[16px] leading-[28px] text-black'>
-          {faq.answer}
-        </p>
-      ) : null}
-    </article>
+    <div className='relative overflow-hidden'>
+      <Image
+        src='/figma/case-study-detail/stats-background.png'
+        alt=''
+        fill
+        className='object-cover'
+        sizes='1320px'
+      />
+      <div className='relative grid grid-cols-1 gap-6 px-6 py-6 sm:px-8 lg:grid-cols-4 lg:px-[112px]'>
+        {stats.map((stat, index) => (
+          <div
+            key={`${stat.value}-${stat.label}-${index}`}
+            className='flex items-center justify-start lg:justify-center gap-4'
+          >
+            <p className='text-[30px] leading-[30px] text-[#6abd45] sm:text-[36px] sm:leading-[36px]'>
+              {stat.value}
+            </p>
+            <p className='text-[18px] capitalize leading-[28px] text-white sm:text-[20px] sm:leading-[30px]'>
+              {stat.label}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
 export default function AboutScene() {
-  const [openFaq, setOpenFaq] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(() =>
     typeof window === "undefined" ? 4 : getSlidesToShowForWidth(window.innerWidth)
   );
@@ -148,30 +176,30 @@ export default function AboutScene() {
       <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='mx-auto max-w-[1120px] text-center'>
           <h1 className='text-[48px] leading-[0.96] text-black sm:text-[68px] lg:text-[96px] lg:leading-[100px]'>
-            India&apos;s Revenue-First Web Design Company
+            india's revenue first web design company
           </h1>
 
-          <p className='mx-auto mt-8 max-w-[760px] text-[18px] leading-[28px] text-black'>
+          {/* <p className='mx-auto mt-8 max-w-[760px] text-[18px] leading-[28px] text-black'>
             We design and build high-performance websites that directly
             contribute to business growth.
-          </p>
+          </p> */}
 
-          <div className='mx-auto mt-6 max-w-[820px] space-y-1 text-[20px] leading-[32px] text-black sm:text-[22px] sm:leading-[34px] lg:text-[24px] lg:leading-[36px]'>
+          {/* <div className='mx-auto mt-6 max-w-[820px] space-y-1 text-[20px] leading-[32px] text-black sm:text-[22px] sm:leading-[34px] lg:text-[24px] lg:leading-[36px]'>
             <p>Built in India. Trusted globally.</p>
             <p>
               20+ years of experience across enterprises, D2C brands and agency
               partners.
             </p>
-          </div>
+          </div> */}
 
           <div className='mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row'>
-            <Button href="/case-studies" variant="primary" size="md">
+            <Button href="/case-studies" variant="secondary" size="md">
               Explore Case Studies
-              <ArrowRightIcon />
-            </Button>
-            <Button href="/contact#contact-form-panel" variant="secondary" size="md">
-              Book a Strategy Call
               <ArrowRightIcon color="black" />
+            </Button>
+            <Button href="/contact#contact-form-panel" variant="primary" size="md">
+              Book a Strategy Call
+              <ArrowRightIcon />
             </Button>
           </div>
         </div>
@@ -330,7 +358,7 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='relative isolate overflow-hidden bg-black text-white my-12'>
+      <section className='relative isolate overflow-hidden bg-black text-white mt-12'>
         <Image
           src='/figma/about/founder-background.jpg'
           alt=''
@@ -350,9 +378,7 @@ export default function AboutScene() {
               </h3>
               <div className='mt-6 border-l border-[#6ABD45] pl-6'>
                 <p className='text-[18px] leading-[28px] text-white'>
-                  Five Online is led by Nayan Khandor, CEO and Growth
-                  Strategist. He believes Web design should sit inside the
-                  revenue conversation — not outside it.
+                  Five Online is led by Nayan Khandor, who has spent over two decades at the intersection of design, technology, and business growth. He started Five Online with one belief: that a website should be held accountable to revenue, not just aesthetics. Today he leads a team of strategists, engineers, and CRO specialists — and is personally involved in  client engagement from  strategy  to launch.
                 </p>
 
                 <div className='mt-8 flex items-center gap-5'>
@@ -380,7 +406,7 @@ export default function AboutScene() {
         </div>
       </section>
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
+      {/* <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
         <div className='mx-auto max-w-[1120px] text-center'>
           <h2 className='text-[42px] leading-[1.08] text-black sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
             A Structured Growth Team
@@ -411,9 +437,9 @@ export default function AboutScene() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      <section className='relative overflow-hidden bg-[#f8f8f8]'>
+      {/* <section className='relative overflow-hidden bg-[#f8f8f8]'>
         <img
           src='/figma/about/trust-decoration.png'
           className="absolute right-[-160px] top-0 object-cover object-left h-full"
@@ -442,35 +468,17 @@ export default function AboutScene() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className='mx-auto w-full max-w-[1440px] px-6 lg:px-[60px] py-12'>
-        <div className='grid gap-10 lg:grid-cols-[320px_minmax(0,1fr)]'>
-          <div>
-            <h2 className='text-[40px] font-bold leading-[1.2] text-black sm:text-[48px]'>
-              The Answer Stack
-              <span className='align-top text-[0.42em]'>TM</span>
-            </h2>
-            <p className='mt-6 max-w-[340px] text-[18px] leading-[30px] text-black'>
-              Structured answers that remove doubt and improve conversion
-              clarity.
-            </p>
-          </div>
+      <StatStrip stats={stats} />
 
-          <div>
-            {faqsByPage.about.map((faq, index) => (
-              <FaqItem
-                key={faq.question}
-                faq={faq}
-                open={openFaq === index}
-                onToggle={() =>
-                  setOpenFaq((current) => (current === index ? -1 : index))
-                }
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <TrustedPartnersSection />
+
+      <FAQAccordion
+        title="The Answer Stack"
+        description="Structured answers that remove doubt and improve conversion clarity."
+        faqs={faqsItems}
+      />
 
       <section className='relative isolate overflow-hidden bg-black text-white my-12'>
         <Image
@@ -482,15 +490,20 @@ export default function AboutScene() {
         />
         <div className='absolute inset-0 bg-black/60' />
 
-        <div className='relative mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-6 py-16 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-[60px] lg:py-20'>
+        <div className='relative mx-auto w-full max-w-[1440px] px-6 py-16 sm:px-8 lg:px-[60px] lg:py-20'>
           <h2 className='max-w-[910px] text-[42px] leading-[1.08] text-white sm:text-[48px] lg:text-[54px] lg:leading-[64px]'>
-            Schedule a 30-minute call with CEO to see if we are a good match.
+            We work with a limited number of brands at a time.
           </h2>
 
-          <Button href="/contact#contact-form-panel" variant="outline" size="md">
-            Book a Strategy Call
-            <ArrowRightIcon />
-          </Button>
+          <div className='flex justify-between items-center gap-10 mt-8'>
+            <p className='text-[20px] leading-[32px] text-[#cacaca]'>
+              If you're building something serious, let's find out if we're the right fit.
+            </p>
+            <Button href="/contact#contact-form-panel" variant="outline" size="md">
+              Book a Strategy Call
+              <ArrowRightIcon />
+            </Button>
+          </div>
         </div>
       </section>
     </main>
