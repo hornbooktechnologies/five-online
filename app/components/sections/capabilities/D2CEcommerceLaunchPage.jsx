@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import Button from "@/app/components/common/Button";
 import Container from "@/app/components/common/Container";
@@ -303,6 +305,17 @@ function SectionTitle({ title, copy, light = false, className = "" }) {
 }
 
 export default function D2CEcommerceLaunchPage() {
+  const [activeTab, setActiveTab] = useState("All Work");
+
+  const filteredPortfolio = portfolio.filter(item => {
+    if (activeTab === "All Work") return true;
+    if (activeTab === "Celebrity Work") return item.category.includes("Celebrity");
+    if (activeTab === "Funded Startups") return item.category.includes("Startup");
+    if (activeTab === "Corporates") return item.category.includes("Corporate");
+    if (activeTab === "Manufactures") return item.category.includes("Manufacturer");
+    return true;
+  });
+
   return (
     <main className='bg-white text-black'>
       <section className='relative overflow-hidden bg-[#fbfffa]'>
@@ -586,21 +599,22 @@ export default function D2CEcommerceLaunchPage() {
               system that performed from Day 1.
             </p>
           </div>
-          <div className='mt-9 flex flex-wrap gap-x-10 gap-y-4 border-b border-black/20 pb-[18px] text-base font-medium uppercase leading-[30px] text-black md:gap-x-[70px]'>
+          <div className='mt-9 flex flex-wrap gap-x-8 gap-y-6 md:gap-y-8 border-b border-black/20 text-base font-medium uppercase leading-[30px] text-black md:gap-x-[70px]'>
             {[
               "All Work",
               "Celebrity Work",
               "Funded Startups",
               "Corporates",
               "Manufactures",
-            ].map((tab, index) => (
+            ].map((tab) => (
               <span
                 key={tab}
-                className={
-                  index === 0
-                    ? "border-b border-black pb-[18px] -mb-[19px]"
-                    : ""
-                }
+                onClick={() => setActiveTab(tab)}
+                className={`cursor-pointer pb-4 -mb-[1px] transition-colors border-b-[2px] ${
+                  activeTab === tab
+                    ? "border-black text-black"
+                    : "border-transparent text-black/60 hover:text-black hover:border-black/20"
+                }`}
               >
                 {tab}
               </span>
@@ -608,7 +622,7 @@ export default function D2CEcommerceLaunchPage() {
           </div>
 
           <div className='mt-20 grid gap-x-5 gap-y-12 lg:grid-cols-3'>
-            {portfolio.map((item) => (
+            {filteredPortfolio.map((item) => (
               <article
                 key={item.name}
                 className={item.featured === "wide" ? "lg:col-span-2" : ""}
