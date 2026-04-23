@@ -35,7 +35,7 @@ export default function Disclaimer() {
     ];
 
     return (
-        <div className="bg-black fixed bottom-0 w-full">
+        <div className="bg-black w-full">
             <Container className='!px-0 !py-2'>
                 <div className="flex justify-center items-center gap-4">
                     {socialLinks.map((link) => (
