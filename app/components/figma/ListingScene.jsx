@@ -117,7 +117,7 @@ function MobileCard({ card }) {
       className={`mx-auto block max-w-[368px] ${card.href ? "cursor-pointer" : ""
         }`}
     >
-      <div className='relative aspect-[368/553] overflow-hidden bg-[#edf6e8] shadow-xl'>
+      <div className='relative aspect-[368/553] overflow-hidden bg-[#edf6e8] shadow-lg'>
         <Image
           src={card.image}
           alt={card.title}
@@ -312,7 +312,7 @@ export default function ListingScene({
                     className={`group flex flex-col h-full overflow-hidden border border-[#ececec] bg-white transition-all duration-300 ${card.href ? "hover:-translate-y-1" : ""
                       }`}
                   >
-                    <div className='relative shrink-0 aspect-[368/553] overflow-hidden bg-[#edf6e8] shadow-xl'>
+                    <div className='relative shrink-0 aspect-[368/553] overflow-hidden bg-[#edf6e8] shadow-lg'>
                       <Image
                         src={card.image}
                         alt={card.title}
@@ -334,8 +334,8 @@ export default function ListingScene({
                         {card.text}
                       </p>}
 
-                      <div className='mt-auto grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out'>
-                        <div className='overflow-hidden'>
+                      <div className='mt-auto grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out'>
+                        <div className='overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out delay-75'>
                           <div className='pt-4 flex flex-wrap gap-2 items-start'>
                             {card.tags.map((tag, index) => (
                               <Tag

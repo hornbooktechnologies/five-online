@@ -311,19 +311,26 @@ export default function ContactScene() {
                   <label className="mb-3 block text-[16px] leading-none text-black">
                     Budget Range <span className="text-[#ff3b30]">*</span>
                   </label>
-                  <select
-                    name="budget"
-                    value={form.budget}
-                    onChange={updateField("budget")}
-                    aria-invalid={Boolean(errors.budget)}
-                    className="h-[50px] w-full border border-black bg-white px-4 text-[18px] text-black outline-none"
-                  >
-                    <option value="">-None-</option>
-                    <option>Rs1.5L - Rs3L</option>
-                    <option>Rs3L - Rs5L</option>
-                    <option>Rs5L - Rs10L</option>
-                    <option>Rs10L+</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      name="budget"
+                      value={form.budget}
+                      onChange={updateField("budget")}
+                      aria-invalid={Boolean(errors.budget)}
+                      className="h-[50px] w-full appearance-none border border-black bg-white pl-4 pr-10 text-[18px] text-black outline-none"
+                    >
+                      <option value="">-None-</option>
+                      <option>Rs1.5L - Rs3L</option>
+                      <option>Rs3L - Rs5L</option>
+                      <option>Rs5L - Rs10L</option>
+                      <option>Rs10L+</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.5L6 6.5L11 1.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
                   <FieldError message={errors.budget} />
                 </div>
 
@@ -331,19 +338,26 @@ export default function ContactScene() {
                   <label className="mb-3 block text-[16px] leading-none text-black">
                     Project Start Date <span className="text-[#ff3b30]">*</span>
                   </label>
-                  <select
-                    name="startDate"
-                    value={form.startDate}
-                    onChange={updateField("startDate")}
-                    aria-invalid={Boolean(errors.startDate)}
-                    className="h-[50px] w-full border border-black bg-white px-4 text-[18px] text-black outline-none"
-                  >
-                    <option value="">-None-</option>
-                    <option>Immediately</option>
-                    <option>Within 1 month</option>
-                    <option>1-3 months</option>
-                    <option>3+ months</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      name="startDate"
+                      value={form.startDate}
+                      onChange={updateField("startDate")}
+                      aria-invalid={Boolean(errors.startDate)}
+                      className="h-[50px] w-full appearance-none border border-black bg-white pl-4 pr-10 text-[18px] text-black outline-none"
+                    >
+                      <option value="">-None-</option>
+                      <option>Immediately</option>
+                      <option>Within 1 month</option>
+                      <option>1-3 months</option>
+                      <option>3+ months</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.5L6 6.5L11 1.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
                   <FieldError message={errors.startDate} />
                 </div>
               </div>

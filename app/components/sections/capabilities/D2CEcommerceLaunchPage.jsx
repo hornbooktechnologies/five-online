@@ -3,6 +3,7 @@ import Button from "@/app/components/common/Button";
 import Container from "@/app/components/common/Container";
 import ArrowRightIcon from "@/app/components/icons/ArrowRightIcon";
 import FAQAccordion from "@/app/components/common/FAQAccordion";
+import TrustedPartnersSection from "@/app/components/sections/home/TrustedPartnersSection";
 
 const stats = [
   ["20+", "Years building digital business"],
@@ -135,7 +136,7 @@ const executionStats = [
     "Lifestyle - D2C Launch",
   ],
   [
-    "Rs.2.1Cr",
+    "₹2.1Cr",
     "Revenue in first 90 days",
     "A celebrity-backed lifestyle brand with a hard launch deadline. We delivered a full D2C ecosystem in 8 weeks — brand, website, tracking, and launch strategy — and they sold out.",
     "Celebrity Lifestyle - Growth Engine",
@@ -259,16 +260,16 @@ const promises = [
 
 const faqs = [
   {
-    q: "What make Five Online different from a regular Shopify agency?",
-    a: "Five Online is a Mumbai-based Best D2C web design company that operates as a revenue-first launch partner, not a typical Shopify development agency. Unlike agencies that execute briefs, Five Online starts every engagement by examining the brand's margin structure, target customer, and revenue model before any design begins. With 20+ years of experience and 500+ projects across D2C, enterprise, and celebrity brands, Five Online builds Shopify stores that are engineered to convert from day one — not just deliver a finished website.",
+    q: "What makes Five Online different from a regular Shopify agency in India?",
+    a: "Five Online is a Mumbai-based Best D2C web design company that operates as a revenue-first launch partner, not a typical Shopify development agency. Unlike agencies that execute briefs, Five Online starts every engagement by examining the brand's margin structure, target customer, and revenue model before any design begins. With 20+ years of experience and 500+ projects across D2C, enterprise, and celebrity brands, Five Online builds Shopify stores that are engineered to convert from day one — not just deliver a finished website.",
   },
   {
     q: "How much does it cost to launch a D2C brand on Shopify in India?",
     a: "A professional D2C launch on Shopify in India typically starts at ₹1.5L and scales based on scope — brand architecture, number of SKUs, third-party integrations, tracking setup, and conversion framework. At Five Online, pricing is scoped per engagement because no two brand launches have the same revenue requirements. Brands with budgets under ₹1L are not the right fit for Five Online's model — a position the agency is transparent about from the first conversation.",
   },
   {
-    q: "What make Five Online different from a regular Shopify agency?",
-    a: "Five Online builds Shopify stores that are engineered to convert from day one, not just deliver a finished website.",
+    q: "Can an existing website be improved for D2C conversions without a full rebuild?",
+    a: "Yes. Five Online offers a standalone D2C Conversion Audit that identifies revenue leaks, funnel gaps, and platform limitations without requiring a full rebuild. In many cases, a strategic overlay or partial redesign delivers better ROI than starting from scratch. Five Online reviews the existing site, analytics, and funnel data before recommending a path — and has no commercial incentive to recommend a rebuild if it isn't necessary.",
   },
 ];
 
@@ -285,9 +286,8 @@ function SectionTitle({ title, copy, light = false, className = "" }) {
   return (
     <div className={className}>
       <h2
-        className={`font-heading text-[34px] leading-[1.15] md:text-[48px] md:leading-[60px] ${
-          light ? "text-white" : "text-black"
-        }`}
+        className={`font-heading text-[34px] leading-[1.15] md:text-[48px] md:leading-[60px] ${light ? "text-white" : "text-black"
+          }`}
       >
         {title}
       </h2>
@@ -440,11 +440,10 @@ export default function D2CEcommerceLaunchPage() {
               {launchSteps.map(([number, title, copy], index) => (
                 <article key={number} className='relative text-center'>
                   <div
-                    className={`relative z-10 mx-auto flex size-[59px] items-center justify-center rounded-full border font-heading text-xl leading-8 ${
-                      index === 2
-                        ? "border-black bg-black text-white"
-                        : "border-[#0000001A] bg-white text-black"
-                    }`}
+                    className={`relative z-10 mx-auto flex size-[59px] items-center justify-center rounded-full border font-heading text-xl leading-8 ${index === 2
+                      ? "border-black bg-black text-white"
+                      : "border-[#0000001A] bg-white text-black"
+                      }`}
                   >
                     {number}
                   </div>
@@ -535,7 +534,7 @@ export default function D2CEcommerceLaunchPage() {
               </article>
             ))}
           </div>
-          <p className='mt-3 text-right text-sm leading-6 text-white/80'>
+          <p className='mt-3 text-center text-sm leading-6 text-white/80'>
             * Verified client results, available on request
           </p>
         </Container>
@@ -721,28 +720,7 @@ export default function D2CEcommerceLaunchPage() {
         </Container>
       </section>
 
-      <section className='bg-[#fcfdfc]'>
-        <Container className='!max-w-[1440px] !px-6 !lg:px-[60px] !py-12'>
-          <div className='grid items-center gap-8 lg:grid-cols-[360px_1fr]'>
-            <h2 className='font-heading text-[40px] leading-[52px] text-black md:text-[48px] md:leading-[60px]'>
-              Trusted By
-            </h2>
-            <div className='grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-6'>
-              {trustedBrands.map((brand) => (
-                <div key={brand} className='relative h-[70px]'>
-                  <Image
-                    src={`/figma/d2c-ecommerce-launch/trusted-by/${brand}`}
-                    alt={brand.replace(".png", "").replaceAll("-", " ")}
-                    fill
-                    sizes='120px'
-                    className='object-contain'
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <TrustedPartnersSection />
 
       <section className='bg-white'>
         <Container className='!max-w-[720px] text-center !px-6 !lg:px-[60px] !py-12'>

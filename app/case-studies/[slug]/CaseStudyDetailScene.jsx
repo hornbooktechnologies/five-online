@@ -17,6 +17,10 @@ function getSceneContent(cs) {
 
 function StatStrip({ stats }) {
   if (!stats) return null;
+
+  // We repeat the stats array multiple times for a seamless marquee effect
+  const marqueeStats = [...stats, ...stats, ...stats, ...stats];
+
   return (
     <div className='relative overflow-hidden'>
       <Image
@@ -26,21 +30,53 @@ function StatStrip({ stats }) {
         className='object-cover'
         sizes='1320px'
       />
-      <div className='relative grid grid-cols-1 gap-6 px-6 py-6 sm:px-8 lg:grid-cols-3 lg:px-[112px]'>
+
+      {/* Mobile Marquee */}
+      <div className='lg:hidden relative py-6 flex overflow-hidden'>
+        <div
+          className='flex w-max'
+          style={{ animation: 'statMarquee 20s linear infinite' }}
+        >
+          {marqueeStats.map((stat, index) => (
+            <div
+              key={`mobile-${stat.value}-${stat.label}-${index}`}
+              className='flex flex-shrink-0 items-center justify-start gap-4 px-6 sm:px-10'
+            >
+              <p className='text-[30px] leading-[30px] text-[#6abd45] sm:text-[36px] sm:leading-[36px]'>
+                {stat.value}
+              </p>
+              <p className='text-[18px] capitalize leading-[28px] text-white sm:text-[20px] sm:leading-[30px] whitespace-nowrap'>
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Grid */}
+      <div className='hidden relative lg:grid lg:grid-cols-3 gap-6 py-6 lg:px-[112px]'>
         {stats.map((stat, index) => (
           <div
-            key={`${stat.value}-${stat.label}-${index}`}
-            className='flex items-center justify-start lg:justify-center gap-4'
+            key={`desktop-${stat.value}-${stat.label}-${index}`}
+            className='flex items-center justify-center gap-4'
           >
             <p className='text-[30px] leading-[30px] text-[#6abd45] sm:text-[36px] sm:leading-[36px]'>
               {stat.value}
             </p>
-            <p className='text-[18px] capitalize leading-[28px] text-white sm:text-[20px] sm:leading-[30px]'>
+            <p className='text-[18px] capitalize leading-[28px] text-white sm:text-[20px] sm:leading-[30px] lg:max-w-[180px] lg:text-balance'>
               {stat.label}
             </p>
           </div>
         ))}
       </div>
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes statMarquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-25%); } 
+        }
+      `}} />
     </div>
   );
 }
@@ -105,7 +141,7 @@ export default function CaseStudyDetailScene({ cs }) {
               </p>
               <div className='mt-3 flex items-center gap-1'>
                 {content.toolIcons && content.toolIcons.map((icon) => (
-                  <Image key={icon} src={icon} alt='' width={48} height={48} />
+                  <Image key={icon} src={icon} alt='' width={48} height={48} className='w-[34px] lg:w-[48px] h-[34px] lg:h-[48px]' />
                 ))}
               </div>
             </div>
@@ -145,7 +181,7 @@ export default function CaseStudyDetailScene({ cs }) {
             Overview
           </p>
           <div className='grid gap-8 lg:grid-cols-[1fr_338px] lg:items-start'>
-            <p className='max-w-[762px] font-display text-[36px] capitalize leading-[1.35] text-black'>
+            <p className='max-w-[762px] font-display text-[24px] leading-[1.35] text-black'>
               {content.overview}
             </p>
             <div className='flex flex-wrap gap-4'>
@@ -202,7 +238,7 @@ export default function CaseStudyDetailScene({ cs }) {
             <h2 className='text-[38px] capitalize leading-[1.18] text-black sm:text-[48px] sm:leading-[60px]'>
               The Real Problem
             </h2>
-            <p className='mt-[16px] text-[16px] leading-none text-[#333]'>
+            <p className='mt-[16px] text-[16px] leading-[28px] text-[#333]'>
               {content.problemLead}
             </p>
 
@@ -233,7 +269,7 @@ export default function CaseStudyDetailScene({ cs }) {
               aria-hidden='true'
               className='w-[125px] h-[125px]'
             />
-            <p className='text-center text-[30px] capitalize leading-[1.35] text-black sm:text-[36px] sm:leading-[48px]'>
+            <p className='text-center text-[30px] capitalize leading-[1.35] text-black sm:text-[36px] sm:leading-[48px] font-display'>
               {content.problemInsight}
             </p>
           </article>
@@ -278,7 +314,7 @@ export default function CaseStudyDetailScene({ cs }) {
                         />
                       </div>
                       <div className={`col-span-12 md:col-span-5 flex flex-col justify-center ${block.theme === 'dark' ? 'order-1' : 'order-1 md:order-2'}`}>
-                        <h3 className='text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px] whitespace-pre-line'>
+                        <h3 className='text-[24px] capitalize leading-[34px] sm:text-[28px] sm:leading-[40px] whitespace-pre-line'>
                           {block.title}
                         </h3>
                         <p className='mt-6 text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px]'>
@@ -303,7 +339,7 @@ export default function CaseStudyDetailScene({ cs }) {
                   <React.Fragment key={index}>
                     <div className='col-span-2 md:col-span-1 bg-[#F0F6ED] text-black rounded-[16px] relative overflow-hidden min-h-auto md:min-h-[543px]'>
                       <div className='flex flex-col justify-center pt-[28px] pl-[28px] max-w-[410px]'>
-                        <h3 className='text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px]'>
+                        <h3 className='text-[24px] capitalize leading-[34px] sm:text-[28px] sm:leading-[40px]'>
                           {block.left.title}
                         </h3>
                         <p className='mt-6 text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px]'>
@@ -329,7 +365,7 @@ export default function CaseStudyDetailScene({ cs }) {
                     </div>
                     <div className='col-span-2 md:col-span-1 bg-[#F0F6ED] text-black rounded-[16px] relative overflow-hidden min-h-auto md:min-h-[543px]'>
                       <div className='flex flex-col justify-center pt-[28px] pl-[28px] max-w-[450px]'>
-                        <h3 className='text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px]'>
+                        <h3 className='text-[24px] capitalize leading-[34px] sm:text-[28px] sm:leading-[40px]'>
                           {block.right.title}
                         </h3>
                         <p className='mt-6 text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px]'>
@@ -361,7 +397,7 @@ export default function CaseStudyDetailScene({ cs }) {
                   <div key={index} className='col-span-2 bg-[#FAFAFA] text-black rounded-[16px] px-[30px] md:px-[60px] pt-[30px] md:pt-0 relative overflow-hidden'>
                     <div className='grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-10'>
                       <div className='col-span-12 md:col-span-5 flex flex-col justify-center'>
-                        <h3 className='text-[24px] leading-[34px] sm:text-[28px] sm:leading-[40px]'>
+                        <h3 className='text-[24px] capitalize leading-[34px] sm:text-[28px] sm:leading-[40px]'>
                           {block.title}
                         </h3>
                         <p className='mt-6 text-[16px] leading-[28px] sm:mt-8 sm:leading-[30px]'>
@@ -390,12 +426,15 @@ export default function CaseStudyDetailScene({ cs }) {
       <section className='mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-12'>
         <Link
           href={content.visitUrl || "#"}
+          target="_blank"
           className='text-[18px] underline decoration-solid underline-offset-[4px]'
         >
           Visit Website
         </Link>
-        <h2 className='mx-auto mt-[40px] max-w-[1096px] whitespace-pre-line text-[38px] capitalize leading-[1.28] text-black sm:mt-[52px] sm:text-[48px] sm:leading-[72px]'>
-          {content.closingHeadline}
+        <h2 className='mx-auto mt-[40px] max-w-[1096px] text-balance whitespace-pre-line text-[38px] capitalize leading-[1.28] text-black sm:mt-[52px] sm:text-[48px] sm:leading-[72px]'>
+          {typeof content.closingHeadline === 'string'
+            ? content.closingHeadline.replace(/ ([^ ]+)$/, '\u00A0$1')
+            : content.closingHeadline}
         </h2>
         <p className='mt-[28px] text-[18px] leading-[28px] text-[#666] sm:mt-[40px] sm:text-[20px] sm:leading-[30px]'>
           {content.closingSubcopy}

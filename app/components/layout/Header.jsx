@@ -271,12 +271,11 @@ export default function Header() {
               <div
                 className="cursor-pointer flex flex-col justify-center items-end"
                 onClick={toggleMobileMenu}
-                style={{ width: '35px', padding: '5px 0' }}
+                style={{ width: '28px', padding: '5px 0' }}
               >
-                <span className="bg-black rounded-full block mb-1.5 transition-all duration-300" style={{ width: '32px', height: '2.5px' }}></span>
-                <span className="bg-black rounded-full block mb-1.5 transition-all duration-300" style={{ width: '32px', height: '2.5px' }}></span>
-                <span className="bg-black rounded-full block mb-1.5 transition-all duration-300" style={{ width: '32px', height: '2.5px' }}></span>
-                <span className="bg-black rounded-full block transition-all duration-300" style={{ width: '32px', height: '2.5px' }}></span>
+                <span className="bg-black rounded-full block mb-1 transition-all duration-300" style={{ width: '26px', height: '2px' }}></span>
+                <span className="bg-black rounded-full block mb-1 transition-all duration-300" style={{ width: '26px', height: '2px' }}></span>
+                <span className="bg-black rounded-full block transition-all duration-300" style={{ width: '26px', height: '2px' }}></span>
               </div>
             </div>
 
