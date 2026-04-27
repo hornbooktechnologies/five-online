@@ -181,7 +181,7 @@ export default function CaseStudyDetailScene({ cs }) {
             Overview
           </p>
           <div className='grid gap-8 lg:grid-cols-[1fr_338px] lg:items-start'>
-            <p className='max-w-[762px] font-display text-[24px] leading-[1.35] text-black'>
+            <p className='max-w-[762px] font-display text-[24px] leading-[1.5] text-black'>
               {content.overview}
             </p>
             <div className='flex flex-wrap gap-4'>
@@ -269,7 +269,7 @@ export default function CaseStudyDetailScene({ cs }) {
               aria-hidden='true'
               className='w-[125px] h-[125px]'
             />
-            <p className='text-center text-[30px] capitalize leading-[1.35] text-black sm:text-[36px] sm:leading-[48px] font-display'>
+            <p className='text-center text-[30px] leading-[1.5] text-black sm:text-[36px] sm:leading-[48px] font-display'>
               {content.problemInsight}
             </p>
           </article>
@@ -436,7 +436,7 @@ export default function CaseStudyDetailScene({ cs }) {
             ? content.closingHeadline.replace(/ ([^ ]+)$/, '\u00A0$1')
             : content.closingHeadline}
         </h2>
-        <p className='mt-[28px] text-[18px] leading-[28px] text-[#666] sm:mt-[40px] sm:text-[20px] sm:leading-[30px]'>
+        <p className='mx-auto max-w-[1100px] mt-[28px] text-[18px] leading-[28px] text-[#666] sm:mt-[40px] sm:text-[20px] sm:leading-[30px]'>
           {content.closingSubcopy}
         </p>
         <div className='mt-[42px]'>

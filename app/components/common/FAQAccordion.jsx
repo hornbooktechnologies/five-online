@@ -45,7 +45,7 @@ export default function FAQAccordion({
                     >
                       <span className="flex-1 pr-4">{question}</span>
                       <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-black">
-                        <span className="text-lg font-bold leading-none text-white">{isOpen ? "-" : "+"}</span>
+                        <span className="text-2xl font-bold leading-none text-white">{isOpen ? "-" : "+"}</span>
                       </span>
                     </button>
                     <div
