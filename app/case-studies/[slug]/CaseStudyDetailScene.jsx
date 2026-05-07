@@ -424,6 +424,10 @@ export default function CaseStudyDetailScene({ cs }) {
       </section>
 
       <section className='mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-12'>
+        <Image src={"/figma/case-study-detail/progress-image.jpeg"} alt="" width={600} height={400} className='w-full h-auto rounded-[8px]' />
+      </section>
+
+      <section className='mx-auto w-full max-w-[1440px] text-center px-6 lg:px-[60px] py-12'>
         <Link
           href={content.visitUrl || "#"}
           target="_blank"
